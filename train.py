@@ -104,6 +104,7 @@ def train(args, model, device, mode, data, logger):
         test_writer.writeheader()
 
     train_loader, val_loader, test_loader = data['train_loader'], data['val_loader'], data['test_loader']
+
     for epoch in range(args.resume_from, args.resume_from + args.n_epochs):
         # train
         logger.write(f'Train epoch {epoch}')
@@ -112,6 +113,11 @@ def train(args, model, device, mode, data, logger):
         # validate
         logger.write(f'Validate epoch {epoch}')
         run_epoch(epoch + 1, model, device, optimizer, val_loader, criterion, val_writer, logger, is_training=False)
+
+        # save 
+        if (args.save_every is not None) and ((epoch + 1) % args.save_every == 0):
+            save_path = os.path.join(args.log_dir, f'model_{epoch+1}.pth')
+            torch.save(model.state_dict(), save_path)
 
     # Save model
     save_path = os.path.join(args.log_dir, f'model_{args.resume_from + args.n_epochs}.pth')

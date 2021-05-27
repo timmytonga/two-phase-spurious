@@ -22,6 +22,8 @@ def main():
     parser.add_argument('--reweight_groups', action='store_true', default=False)
     parser.add_argument('--resume', action='store_true', default=False)
     parser.add_argument('--resume_from', type=int, default=0)
+    parser.add_argument('--gpu', type=int, default=0)
+    parser.add_argument('--save_every', type=int, default=None)
 
     args = parser.parse_args()
     # setup logging
@@ -38,7 +40,8 @@ def main():
     set_seed(args.seed)
 
     # loading data
-
+    device = f'cuda:{args.gpu}' if torch.cuda.is_available() else 'cpu'
+    logger.write('Using {} device'.format(device))
     root_dir = '/home/thiennguyen/research/datasets/celebA/'  # dir that contains data
     target_name = 'Blond_Hair'  # we are classifying whether the input image is blond or not
     confounder_names = ['Male']  # we aim to avoid learning spurious features... here it's the gender
@@ -82,8 +85,7 @@ def main():
     
     logger.flush()
     # initialize model, loss, and optimizer
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    logger.write('Using {} device'.format(device))
+
     model = resnet10vw(args.resnet_width, num_classes=n_classes)
     if args.resume:
         load_path = os.path.join(args.log_dir, f'model_{args.resume_from}.pth')

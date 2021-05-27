@@ -22,6 +22,7 @@ def main():
     parser.add_argument('--log_dir', type=str, default='./phase2_log')
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--resume_from', type=int, default=0)
+    parser.add_argument('--gpu', type=int, default=0)
 
     # '--dataset', 'CelebA', '-s', 'confounder', '-t', 'Blond_Hair', '-c', 'Male', '--log_dir', 'twophaselog_w32', '--seed', '0',
     # toparse = ['--resnet_width', '16',
@@ -38,7 +39,7 @@ def main():
     log_args(args, logger)
     set_seed(args.seed)
 
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    device = f'cuda:{args.gpu}' if torch.cuda.is_available() else 'cpu'
     print('Using {} device'.format(device))
 
     root_dir = '/home/thiennguyen/research/datasets/celebA/'  # dir that contains data
