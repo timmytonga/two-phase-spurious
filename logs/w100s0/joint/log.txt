@@ -1,0 +1,28 @@
+Train_jointly CelebALog dir: logs/w100s0/joint
+Seed: 0
+N epochs: 100
+Batch size: 128
+Lr: 0.001
+Weight decay: 1e-05
+Resnet width: 100
+Reweight groups: False
+Resume: False
+Resume from: 0
+Gpu: 0
+Save every: 5
+
+Using cuda:0 deviceTraining Data...
+    Blond_Hair = 0, Male = 0: n = 71629
+    Blond_Hair = 0, Male = 1: n = 66874
+    Blond_Hair = 1, Male = 0: n = 22880
+    Blond_Hair = 1, Male = 1: n = 1387
+Validation Data...
+    Blond_Hair = 0, Male = 0: n = 8535
+    Blond_Hair = 0, Male = 1: n = 8276
+    Blond_Hair = 1, Male = 0: n = 2874
+    Blond_Hair = 1, Male = 1: n = 182
+Test Data...
+    Blond_Hair = 0, Male = 0: n = 9767
+    Blond_Hair = 0, Male = 1: n = 7535
+    Blond_Hair = 1, Male = 0: n = 2480
+    Blond_Hair = 1, Male = 1: n = 180

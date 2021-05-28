@@ -1,0 +1,28 @@
+Resnet width: 2
+Model path: logs/w2s0/joint/model_20.pth
+Lr: 0.001
+Weight decay: 1e-06
+Sampling method: subsample
+N epochs: 50
+Log dir: logs/w2s0/subsample20
+Seed: 0
+Resume from: 0
+Gpu: 1
+Save every: None
+
+Training Data...
+    Blond_Hair = 0, Male = 0: n = 1387
+    Blond_Hair = 0, Male = 1: n = 1387
+    Blond_Hair = 1, Male = 0: n = 1387
+    Blond_Hair = 1, Male = 1: n = 1387
+Validation Data...
+    Blond_Hair = 0, Male = 0: n = 8535
+    Blond_Hair = 0, Male = 1: n = 8276
+    Blond_Hair = 1, Male = 0: n = 2874
+    Blond_Hair = 1, Male = 1: n = 182
+Test Data...
+    Blond_Hair = 0, Male = 0: n = 9767
+    Blond_Hair = 0, Male = 1: n = 7535
+    Blond_Hair = 1, Male = 0: n = 2480
+    Blond_Hair = 1, Male = 1: n = 180
+Train epoch 0Validate epoch 0Train epoch 1Validate epoch 1Train epoch 2Validate epoch 2Train epoch 3Validate epoch 3Train epoch 4Validate epoch 4Train epoch 5Validate epoch 5Train epoch 6Validate epoch 6Train epoch 7Validate epoch 7Train epoch 8Validate epoch 8Train epoch 9Validate epoch 9Train epoch 10Validate epoch 10Train epoch 11Validate epoch 11Train epoch 12Validate epoch 12Train epoch 13Validate epoch 13Train epoch 14Validate epoch 14Train epoch 15Validate epoch 15Train epoch 16Validate epoch 16Train epoch 17Validate epoch 17Train epoch 18Validate epoch 18Train epoch 19Validate epoch 19Train epoch 20Validate epoch 20Train epoch 21Validate epoch 21Train epoch 22Validate epoch 22Train epoch 23Validate epoch 23Train epoch 24Validate epoch 24Train epoch 25Validate epoch 25Train epoch 26Validate epoch 26Train epoch 27Validate epoch 27Train epoch 28Validate epoch 28Train epoch 29Validate epoch 29Train epoch 30Validate epoch 30Train epoch 31Validate epoch 31Train epoch 32Validate epoch 32Train epoch 33Validate epoch 33Train epoch 34Validate epoch 34Train epoch 35Validate epoch 35Train epoch 36Validate epoch 36Train epoch 37Validate epoch 37Train epoch 38Validate epoch 38Train epoch 39Validate epoch 39Train epoch 40Validate epoch 40Train epoch 41Validate epoch 41Train epoch 42Validate epoch 42Train epoch 43Validate epoch 43Train epoch 44Validate epoch 44Train epoch 45Validate epoch 45Train epoch 46Validate epoch 46Train epoch 47Validate epoch 47Train epoch 48Validate epoch 48Train epoch 49Validate epoch 49

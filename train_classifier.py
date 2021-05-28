@@ -20,9 +20,10 @@ def main():
     parser.add_argument('--sampling_method', choices=sampling_methods, default=None)
     parser.add_argument('--n_epochs', type=int, default=25)
     parser.add_argument('--log_dir', type=str, default='./phase2_log')
-    parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--seed', type=int, default=None)
     parser.add_argument('--resume_from', type=int, default=0)
     parser.add_argument('--gpu', type=int, default=0)
+    parser.add_argument('--save_every', type=int, default=None)
 
     # '--dataset', 'CelebA', '-s', 'confounder', '-t', 'Blond_Hair', '-c', 'Male', '--log_dir', 'twophaselog_w32', '--seed', '0',
     # toparse = ['--resnet_width', '16',
@@ -37,7 +38,8 @@ def main():
     logger = Logger(os.path.join(args.log_dir, 'log.txt'), mode)
     # Record args
     log_args(args, logger)
-    set_seed(args.seed)
+    if args.seed is not None:
+        set_seed(args.seed)
 
     device = f'cuda:{args.gpu}' if torch.cuda.is_available() else 'cpu'
     print('Using {} device'.format(device))

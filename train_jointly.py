@@ -13,7 +13,7 @@ def main():
     parser = argparse.ArgumentParser()
     # args: log_dir, seed, lr, batchsize, width, n_epochs, weight_decay
     parser.add_argument('--log_dir', default='./logs')
-    parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--seed', type=int, default=None)
     parser.add_argument('--n_epochs', type=int, default=4)
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--lr', type=float, default=0.001)
@@ -37,7 +37,8 @@ def main():
     # Record args
     logger.write(f'Train_jointly CelebA')
     log_args(args, logger)
-    set_seed(args.seed)
+    if args.seed is not None:
+        set_seed(args.seed)
 
     # loading data
     device = f'cuda:{args.gpu}' if torch.cuda.is_available() else 'cpu'

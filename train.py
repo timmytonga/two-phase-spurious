@@ -114,7 +114,7 @@ def train(args, model, device, mode, data, logger):
         logger.write(f'Validate epoch {epoch}')
         run_epoch(epoch + 1, model, device, optimizer, val_loader, criterion, val_writer, logger, is_training=False)
 
-        # save 
+        # save
         if (args.save_every is not None) and ((epoch + 1) % args.save_every == 0):
             save_path = os.path.join(args.log_dir, f'model_{epoch+1}.pth')
             torch.save(model.state_dict(), save_path)

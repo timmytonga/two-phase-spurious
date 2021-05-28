@@ -119,6 +119,7 @@ def set_seed(seed):
     np.random.seed(seed)
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
+    print("WARNING: USER HAVE SET SEED i.e. USES CUDA DETERMINISTIC MACHINE --> THIS SLOWS DOWN TRAINING DRAMATICALLY!")
 
 
 def log_args(args, logger):

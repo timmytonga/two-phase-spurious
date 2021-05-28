@@ -27,6 +27,7 @@ def pnorm(weights, p):
         ws[i] = ws[i] / torch.pow(normB[i], p)
     return ws
 
+
 #######################################
 #     Load args/data/model            #
 #######################################
@@ -34,9 +35,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--resnet_width', type=int, default=None)
 parser.add_argument('--model_path', type=str)
 parser.add_argument('--log_dir', type=str, default=None)
-parser.add_argument('--seed', type=int, default=0)
+parser.add_argument('--seed', type=int, default=None)
+parser.add_argument('--min_tau', type=float, default=0.0)
+parser.add_argument('--max_tau', type=float, default=1.0)
+parser.add_argument('--step', type=int, default=21)
 
 args = parser.parse_args()
+assert args.min_tau < args.max_tau, "min must less than max"
 # setup logging
 mode = 'w'
 if not os.path.exists(args.log_dir):
@@ -44,7 +49,8 @@ if not os.path.exists(args.log_dir):
 logger = Logger(os.path.join(args.log_dir, 'log.txt'), mode)
 # Record args
 log_args(args, logger)
-set_seed(args.seed)
+if args.seed is not None:
+    set_seed(args.seed)
 
 device = f'cuda' if torch.cuda.is_available() else 'cpu'
 # device = 'cpu'  # no hard computation -- just use cpu
@@ -102,6 +108,7 @@ valtest_columns = ['epoch', 'total_acc', 'group0_acc', 'group1_acc', 'group2_acc
                        'group1_margin', 'group2_margin', 'group3_margin'] + total_acc_per_group
 val_path = open(os.path.join(args.log_dir, 'val.csv'), 'w')
 val_writer = csv.DictWriter(val_path, fieldnames=valtest_columns)
+val_writer.writeheader()
 
 
 def run_eval(x, reweighted_lastlayer, dataset, tau, writer):
@@ -117,7 +124,7 @@ def run_eval(x, reweighted_lastlayer, dataset, tau, writer):
 #######################################
 #     Rescale last layer              #
 #######################################
-for p in np.linspace(0, 2, 21):
+for p in np.linspace(args.min_tau, args.max_tau, args.step):
     ws = pnorm(fc_weights, p)
     run_eval(model, ws, val_loader, p, val_writer)
 
