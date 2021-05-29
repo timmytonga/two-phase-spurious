@@ -4,6 +4,7 @@ import os
 import csv
 from pprint import pprint
 import numpy as np
+from losses import LDAMLoss
 
 
 def write_to_writer(writer, content):
@@ -75,7 +76,15 @@ def run_epoch(epoch, model, device, optimizer, loader, loss_computer, writer, lo
 
 
 def train(args, model, device, mode, data, logger):
-    criterion = torch.nn.CrossEntropyLoss().to(device)
+    if args.loss_type == 'CE':
+        criterion = torch.nn.CrossEntropyLoss()
+    elif args.loss_type == 'LDAM':
+        cls_num_list = data['train_data'].group_counts().numpy()
+        criterion = LDAMLoss(cls_num_list, device=device)  # I am just using the default setting here
+    else:
+        raise Exception
+
+    criterion.to(device)
     optimizer = torch.optim.SGD(
         filter(lambda p: p.requires_grad, model.parameters()),
         lr=args.lr,

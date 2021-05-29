@@ -1,0 +1,23 @@
+Resnet width: 2
+Model path: logs/w2s0/joint/model_80.pth
+Log dir: logs/w2s0/tau_norm80
+Seed: 0
+Min tau: 0.0
+Max tau: 5.0
+Step: 51
+
+Training Data...
+    Blond_Hair = 0, Male = 0: n = 71629
+    Blond_Hair = 0, Male = 1: n = 66874
+    Blond_Hair = 1, Male = 0: n = 22880
+    Blond_Hair = 1, Male = 1: n = 1387
+Validation Data...
+    Blond_Hair = 0, Male = 0: n = 8535
+    Blond_Hair = 0, Male = 1: n = 8276
+    Blond_Hair = 1, Male = 0: n = 2874
+    Blond_Hair = 1, Male = 1: n = 182
+Test Data...
+    Blond_Hair = 0, Male = 0: n = 9767
+    Blond_Hair = 0, Male = 1: n = 7535
+    Blond_Hair = 1, Male = 0: n = 2480
+    Blond_Hair = 1, Male = 1: n = 180

@@ -1,0 +1,23 @@
+Resnet width: 16
+Model path: logs/w16s0//reweight20/model_25.pth
+Log dir: logs/w16s0//RWTN/20
+Seed: None
+Min tau: 0.0
+Max tau: 5.0
+Step: 51
+
+Training Data...
+    Blond_Hair = 0, Male = 0: n = 71629
+    Blond_Hair = 0, Male = 1: n = 66874
+    Blond_Hair = 1, Male = 0: n = 22880
+    Blond_Hair = 1, Male = 1: n = 1387
+Validation Data...
+    Blond_Hair = 0, Male = 0: n = 8535
+    Blond_Hair = 0, Male = 1: n = 8276
+    Blond_Hair = 1, Male = 0: n = 2874
+    Blond_Hair = 1, Male = 1: n = 182
+Test Data...
+    Blond_Hair = 0, Male = 0: n = 9767
+    Blond_Hair = 0, Male = 1: n = 7535
+    Blond_Hair = 1, Male = 0: n = 2480
+    Blond_Hair = 1, Male = 1: n = 180

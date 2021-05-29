@@ -11,6 +11,7 @@ from train import train
 
 def main():
     sampling_methods = ['subsample', 'reweight']
+    avail_losses = ['LDAM', 'CE']
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--resnet_width', type=int, default=None)
@@ -24,6 +25,7 @@ def main():
     parser.add_argument('--resume_from', type=int, default=0)
     parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('--save_every', type=int, default=None)
+    parser.add_argument('--loss_type', type=str, choices=avail_losses, default='CE')
 
     # '--dataset', 'CelebA', '-s', 'confounder', '-t', 'Blond_Hair', '-c', 'Male', '--log_dir', 'twophaselog_w32', '--seed', '0',
     # toparse = ['--resnet_width', '16',
