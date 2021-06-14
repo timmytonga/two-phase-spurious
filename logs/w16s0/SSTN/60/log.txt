@@ -1,6 +1,6 @@
 Resnet width: 16
-Model path: logs/w16s0//subsample40/model_50.pth
-Log dir: logs/w16s0//SSTN/40
+Model path: logs/w16s0//subsample60/model_50.pth
+Log dir: logs/w16s0//SSTN/60
 Seed: None
 Min tau: 0.0
 Max tau: 5.0
