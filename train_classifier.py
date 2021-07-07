@@ -20,12 +20,13 @@ def main():
     parser.add_argument('--weight_decay', type=float, default='1e-6')
     parser.add_argument('--sampling_method', choices=sampling_methods, default=None)
     parser.add_argument('--n_epochs', type=int, default=25)
-    parser.add_argument('--log_dir', type=str, default='./phase2_log')
+    parser.add_argument('--log_dir', type=str, default=None, help='Please set log dir to save results and checkpoints')
     parser.add_argument('--seed', type=int, default=None)
     parser.add_argument('--resume_from', type=int, default=0)
     parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('--save_every', type=int, default=None)
     parser.add_argument('--loss_type', type=str, choices=avail_losses, default='CE')
+    parser.add_argument('--robust', action='store_true', default=False)
 
     # '--dataset', 'CelebA', '-s', 'confounder', '-t', 'Blond_Hair', '-c', 'Male', '--log_dir', 'twophaselog_w32', '--seed', '0',
     # toparse = ['--resnet_width', '16',

@@ -4,7 +4,7 @@ import os
 import csv
 from pprint import pprint
 import numpy as np
-from losses import LDAMLoss
+from losses import LDAMLoss, LossComputer
 
 
 def write_to_writer(writer, content):
@@ -13,7 +13,7 @@ def write_to_writer(writer, content):
 
 
 # refactor by making only 1 writer
-def run_epoch(epoch, model, device, optimizer, loader, loss_computer, writer, logger, is_training):
+def run_epoch(epoch, model, device, optimizer, loader, loss_computer, writer, logger, is_training, is_robust=False):
     if is_training:
         model.train()
     else:
@@ -33,14 +33,18 @@ def run_epoch(epoch, model, device, optimizer, loader, loss_computer, writer, lo
 
             if is_training:
                 optimizer.zero_grad()
-                loss = loss_computer(outputs, g)  # we are classifying groups
+                if is_robust:
+                    loss = loss_computer.loss(outputs, g, g, is_training=True)
+                else:
+                    loss = loss_computer(outputs, g)  # we are classifying groups
                 loss.backward()
                 optimizer.step()
                 # print statistics
                 running_loss += loss.item()
                 if (batch_idx % log_train_every) == log_train_every - 1:  # print every 200 mini-batches
-                    logger.write('[%d, %5d] loss: %.3f, avg_margin: %.3f' %
-                                 (epoch, batch_idx + 1, running_loss / log_train_every, total_margin / total))
+                    logger.write('[%d, %5d] loss: %.3f, avg_margin: %.3f. adv_probs: %s' %
+                                 (epoch, batch_idx + 1, running_loss / log_train_every, total_margin / total,
+                                  str(loss_computer.adv_probs)))
                     running_loss = 0.0
 
             # extra validation
@@ -73,6 +77,7 @@ def run_epoch(epoch, model, device, optimizer, loader, loss_computer, writer, lo
             stats_dict['loss'] = f'{running_loss / log_train_every:.4f}'
 
         write_to_writer(writer, stats_dict)
+        loss_computer.reset_stats()
 
 
 def train(args, model, device, mode, data, logger):
@@ -85,6 +90,11 @@ def train(args, model, device, mode, data, logger):
         raise Exception
 
     criterion.to(device)
+    if args.robust:
+        criterion = torch.nn.CrossEntropyLoss(reduction='none')
+        loss_computer = LossComputer(criterion, is_robust=args.robust, dataset=data['train_data'])
+    else:
+        loss_computer = criterion
     optimizer = torch.optim.SGD(
         filter(lambda p: p.requires_grad, model.parameters()),
         lr=args.lr,
@@ -117,11 +127,13 @@ def train(args, model, device, mode, data, logger):
     for epoch in range(args.resume_from, args.resume_from + args.n_epochs):
         # train
         logger.write(f'Train epoch {epoch}')
-        run_epoch(epoch + 1, model, device, optimizer, train_loader, criterion, train_writer, logger, is_training=True)
+        run_epoch(epoch + 1, model, device, optimizer, train_loader, loss_computer, train_writer, logger,
+                  is_training=True, is_robust=args.robust)
 
         # validate
         logger.write(f'Validate epoch {epoch}')
-        run_epoch(epoch + 1, model, device, optimizer, val_loader, criterion, val_writer, logger, is_training=False)
+        run_epoch(epoch + 1, model, device, optimizer, val_loader, loss_computer, val_writer, logger,
+                  is_training=False, is_robust=args.robust)
 
         # save
         if (args.save_every is not None) and ((epoch + 1) % args.save_every == 0):

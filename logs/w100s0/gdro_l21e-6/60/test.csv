@@ -1,0 +1,1 @@
+epoch,total_acc,group0_acc,group1_acc,group2_acc,group3_acc,split_acc,avg_margin,group0_margin,group1_margin,group2_margin,group3_margin,total_acc:g0,total_acc:g1,total_acc:g2,total_acc:g3

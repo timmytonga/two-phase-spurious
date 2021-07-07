@@ -1,0 +1,9 @@
+Resnet width: 16
+Model path: log_w16_seed0/last_model_50.pth
+Lr: 0.001
+Weight decay: 1e-06
+Sampling method: reweight
+N epochs: 25
+Log dir: ./phase2_log
+Seed: 0
+

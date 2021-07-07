@@ -24,7 +24,8 @@ def main():
     parser.add_argument('--resume_from', type=int, default=0)
     parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('--save_every', type=int, default=None)
-
+    parser.add_argument('--robust', action='store_true', default=False)
+    
     args = parser.parse_args()
     # setup logging
     mode = 'a'

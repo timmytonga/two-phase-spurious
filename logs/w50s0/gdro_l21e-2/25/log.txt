@@ -1,0 +1,30 @@
+Resnet width: 50
+Model path: logs/w50s0//joint/model_25.pth
+Lr: 0.0001
+Weight decay: 0.01
+Sampling method: reweight
+N epochs: 25
+Log dir: logs/w50s0//gdro_l21e-2/25
+Seed: None
+Resume from: 0
+Gpu: 0
+Save every: None
+Loss type: CE
+Robust: True
+
+Training Data...
+    Blond_Hair = 0, Male = 0: n = 71629
+    Blond_Hair = 0, Male = 1: n = 66874
+    Blond_Hair = 1, Male = 0: n = 22880
+    Blond_Hair = 1, Male = 1: n = 1387
+Validation Data...
+    Blond_Hair = 0, Male = 0: n = 8535
+    Blond_Hair = 0, Male = 1: n = 8276
+    Blond_Hair = 1, Male = 0: n = 2874
+    Blond_Hair = 1, Male = 1: n = 182
+Test Data...
+    Blond_Hair = 0, Male = 0: n = 9767
+    Blond_Hair = 0, Male = 1: n = 7535
+    Blond_Hair = 1, Male = 0: n = 2480
+    Blond_Hair = 1, Male = 1: n = 180
+Train epoch 0[1,   200] loss: 11.197, avg_margin: 2.903[1,   400] loss: 3.901, avg_margin: 1.660[1,   600] loss: 0.680, avg_margin: 0.723[1,   800] loss: 0.229, avg_margin: 0.043[1,  1000] loss: 0.141, avg_margin: -0.448[1,  1200] loss: 0.104, avg_margin: -0.835Validate epoch 0Train epoch 1[2,   200] loss: 0.077, avg_margin: -2.997[2,   400] loss: 0.069, avg_margin: -3.111[2,   600] loss: 0.063, avg_margin: -3.189[2,   800] loss: 0.051, avg_margin: -3.252[2,  1000] loss: 0.049, avg_margin: -3.326[2,  1200] loss: 0.050, avg_margin: -3.386Validate epoch 1Train epoch 2[3,   200] loss: 0.041, avg_margin: -3.882[3,   400] loss: 0.039, avg_margin: -3.894
