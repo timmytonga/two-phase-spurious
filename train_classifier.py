@@ -1,6 +1,6 @@
 import os
 import argparse
-from utils import set_seed, Logger, log_args
+from utils import set_seed, LoggerAdv as Logger, log_args
 import torch
 from data.celebA_dataset import CelebADataset
 from data.dro_dataset import DRODataset

@@ -5,13 +5,98 @@ import numpy as np
 import csv
 from models import model_attributes
 from data.data import dataset_attributes, shift_types
+import logging
+
+
+def get_logger(name: str,
+               filename: str,
+               l_format: str = "%(asctime)s:%(name)s:%(levelname)s: %(message)s",
+               file_log_level: int = logging.INFO,
+               output_to_console: bool = True,
+               console_log_level: int = logging.INFO) -> logging.Logger:
+    """
+    Return a logger configured to output to file and/or stdout
+    :param name: the name of the logger -- usually __name__ for module name
+    :param filename: the name for the log file for the logger to output to ex. "run2.log"
+    :param l_format: a format string according to logging.Formatter (see Python docs for more info)
+    :param file_log_level: logging level to log to the file
+    :param output_to_console: whether we want this logger to output to stdout or not
+    :param console_log_level: what level this logger should output to stdout
+    :return:
+    """
+    logger = logging.getLogger(name)
+    logger.setLevel(console_log_level)
+
+    formatter = logging.Formatter(l_format)
+    dirname = os.path.dirname(filename)
+    if not os.path.exists(dirname):
+        os.mkdir(dirname)
+    file_handler = logging.FileHandler(filename, mode="w")
+    file_handler.setLevel(file_log_level)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    if output_to_console:
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        logger.addHandler(stream_handler)
+
+    return logger
+
+
+class LoggerAdv(object):
+    def __init__(self, fpath=None, mode='w', name=__name__):
+        self.console = sys.stdout
+        # self.file = None
+        self.logger = None
+        if fpath is not None:
+            self.logger = get_logger(name, fpath)
+            # self.file = open(fpath, mode)
+    #
+    # def __del__(self):
+    #     self.close()
+    #
+    # def __enter__(self):
+    #     pass
+    #
+    # def __exit__(self, *args):
+    #     self.close()
+
+    def write(self, msg, level="INFO"):
+        assert level in ["INFO", "DEBUG", "WARNING", "ERROR", "CRITICAL"]
+        self.console.write(msg)
+        if self.logger is not None:
+            if level == "INFO":
+                self.logger.info(msg)
+            elif level == "DEBUG":
+                self.logger.debug(msg)
+            elif level == "WARNING":
+                self.logger.warning(msg)
+            elif level == "ERROR":
+                self.logger.error(msg)
+            elif level == "CRITICAL":
+                self.logger.critical(msg)
+
+    def flush(self):
+        pass
+        # self.console.flush()
+        # if self.file is not None:
+        #     self.file.flush()
+        #     os.fsync(self.file.fileno())
+
+    def close(self):
+        pass
+        # self.console.close()
+        # if self.file is not None:
+        #     self.file.close()
 
 
 class Logger(object):
-    def __init__(self, fpath=None, mode='w'):
+    def __init__(self, fpath=None, mode='w', name=__name__):
         self.console = sys.stdout
         self.file = None
+        # self.logger = None
         if fpath is not None:
+            # self.logger = get_logger(name, fpath)
             self.file = open(fpath, mode)
 
     def __del__(self):

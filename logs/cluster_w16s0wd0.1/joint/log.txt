@@ -1,0 +1,866 @@
+2021-07-19 01:21:05,797:utils:INFO: Train_jointly CelebA
+2021-07-19 01:21:05,798:utils:INFO: Log dir: logs/cluster_w16s0wd0.1/joint
+
+2021-07-19 01:21:05,798:utils:INFO: Seed: 0
+
+2021-07-19 01:21:05,798:utils:INFO: N epochs: 100
+
+2021-07-19 01:21:05,798:utils:INFO: Batch size: 128
+
+2021-07-19 01:21:05,798:utils:INFO: Lr: 0.001
+
+2021-07-19 01:21:05,798:utils:INFO: Weight decay: 0.1
+
+2021-07-19 01:21:05,798:utils:INFO: Resnet width: 16
+
+2021-07-19 01:21:05,798:utils:INFO: Reweight groups: False
+
+2021-07-19 01:21:05,798:utils:INFO: Resume: False
+
+2021-07-19 01:21:05,798:utils:INFO: Resume from: 0
+
+2021-07-19 01:21:05,798:utils:INFO: Gpu: 0
+
+2021-07-19 01:21:05,798:utils:INFO: Save every: 5
+
+2021-07-19 01:21:05,798:utils:INFO: Robust: False
+
+2021-07-19 01:21:05,798:utils:INFO: Loss type: CE
+
+2021-07-19 01:21:05,798:utils:INFO: Classifying groups: False
+
+2021-07-19 01:21:05,798:utils:INFO: Use cpu: False
+
+2021-07-19 01:21:05,798:utils:INFO: 
+
+2021-07-19 01:21:05,808:utils:INFO: Using cuda:0 device
+2021-07-19 01:21:06,215:utils:INFO: Training Data...
+
+2021-07-19 01:21:06,215:utils:INFO:     Blond_Hair = 0, Male = 0: n = 71629
+
+2021-07-19 01:21:06,215:utils:INFO:     Blond_Hair = 0, Male = 1: n = 66874
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 1, Male = 0: n = 22880
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 1, Male = 1: n = 1387
+
+2021-07-19 01:21:06,216:utils:INFO: Validation Data...
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 0, Male = 0: n = 8535
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 0, Male = 1: n = 8276
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 1, Male = 0: n = 2874
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 1, Male = 1: n = 182
+
+2021-07-19 01:21:06,216:utils:INFO: Test Data...
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 0, Male = 0: n = 9767
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 0, Male = 1: n = 7535
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 1, Male = 0: n = 2480
+
+2021-07-19 01:21:06,216:utils:INFO:     Blond_Hair = 1, Male = 1: n = 180
+
+2021-07-19 01:21:07,613:utils:INFO: Train epoch 0
+2021-07-19 01:21:17,308:utils:INFO: [1,   200] loss: 0.353, avg_margin: 0.524. 
+2021-07-19 01:21:26,742:utils:INFO: [1,   400] loss: 0.277, avg_margin: 0.686. 
+2021-07-19 01:21:36,192:utils:INFO: [1,   600] loss: 0.233, avg_margin: 0.792. 
+2021-07-19 01:21:45,642:utils:INFO: [1,   800] loss: 0.215, avg_margin: 0.864. 
+2021-07-19 01:21:55,097:utils:INFO: [1,  1000] loss: 0.214, avg_margin: 0.905. 
+2021-07-19 01:22:04,522:utils:INFO: [1,  1200] loss: 0.217, avg_margin: 0.928. 
+2021-07-19 01:22:08,014:utils:INFO: Validate epoch 0
+2021-07-19 01:22:15,597:utils:INFO: Train epoch 1
+2021-07-19 01:22:25,341:utils:INFO: [2,   200] loss: 0.215, avg_margin: 1.023. 
+2021-07-19 01:22:34,689:utils:INFO: [2,   400] loss: 0.213, avg_margin: 1.015. 
+2021-07-19 01:22:44,042:utils:INFO: [2,   600] loss: 0.212, avg_margin: 1.009. 
+2021-07-19 01:22:53,446:utils:INFO: [2,   800] loss: 0.220, avg_margin: 0.998. 
+2021-07-19 01:23:02,846:utils:INFO: [2,  1000] loss: 0.220, avg_margin: 0.989. 
+2021-07-19 01:23:12,255:utils:INFO: [2,  1200] loss: 0.221, avg_margin: 0.980. 
+2021-07-19 01:23:15,656:utils:INFO: Validate epoch 1
+2021-07-19 01:23:23,125:utils:INFO: Train epoch 2
+2021-07-19 01:23:32,791:utils:INFO: [3,   200] loss: 0.223, avg_margin: 0.919. 
+2021-07-19 01:23:42,197:utils:INFO: [3,   400] loss: 0.223, avg_margin: 0.915. 
+2021-07-19 01:23:51,644:utils:INFO: [3,   600] loss: 0.224, avg_margin: 0.914. 
+2021-07-19 01:24:01,012:utils:INFO: [3,   800] loss: 0.223, avg_margin: 0.912. 
+2021-07-19 01:24:10,378:utils:INFO: [3,  1000] loss: 0.228, avg_margin: 0.911. 
+2021-07-19 01:24:19,728:utils:INFO: [3,  1200] loss: 0.221, avg_margin: 0.914. 
+2021-07-19 01:24:23,085:utils:INFO: Validate epoch 2
+2021-07-19 01:24:30,527:utils:INFO: Train epoch 3
+2021-07-19 01:24:40,198:utils:INFO: [4,   200] loss: 0.222, avg_margin: 0.922. 
+2021-07-19 01:24:49,613:utils:INFO: [4,   400] loss: 0.225, avg_margin: 0.919. 
+2021-07-19 01:24:58,995:utils:INFO: [4,   600] loss: 0.219, avg_margin: 0.921. 
+2021-07-19 01:25:08,398:utils:INFO: [4,   800] loss: 0.224, avg_margin: 0.920. 
+2021-07-19 01:25:17,793:utils:INFO: [4,  1000] loss: 0.219, avg_margin: 0.921. 
+2021-07-19 01:25:27,170:utils:INFO: [4,  1200] loss: 0.222, avg_margin: 0.920. 
+2021-07-19 01:25:30,592:utils:INFO: Validate epoch 3
+2021-07-19 01:25:38,026:utils:INFO: Train epoch 4
+2021-07-19 01:25:47,853:utils:INFO: [5,   200] loss: 0.219, avg_margin: 0.921. 
+2021-07-19 01:25:57,328:utils:INFO: [5,   400] loss: 0.222, avg_margin: 0.920. 
+2021-07-19 01:26:06,852:utils:INFO: [5,   600] loss: 0.222, avg_margin: 0.918. 
+2021-07-19 01:26:16,359:utils:INFO: [5,   800] loss: 0.217, avg_margin: 0.920. 
+2021-07-19 01:26:25,939:utils:INFO: [5,  1000] loss: 0.213, avg_margin: 0.923. 
+2021-07-19 01:26:35,458:utils:INFO: [5,  1200] loss: 0.216, avg_margin: 0.925. 
+2021-07-19 01:26:38,915:utils:INFO: Validate epoch 4
+2021-07-19 01:26:46,435:utils:INFO: Train epoch 5
+2021-07-19 01:26:56,135:utils:INFO: [6,   200] loss: 0.217, avg_margin: 0.933. 
+2021-07-19 01:27:05,539:utils:INFO: [6,   400] loss: 0.214, avg_margin: 0.935. 
+2021-07-19 01:27:14,935:utils:INFO: [6,   600] loss: 0.218, avg_margin: 0.932. 
+2021-07-19 01:27:24,398:utils:INFO: [6,   800] loss: 0.218, avg_margin: 0.931. 
+2021-07-19 01:27:33,773:utils:INFO: [6,  1000] loss: 0.219, avg_margin: 0.930. 
+2021-07-19 01:27:43,124:utils:INFO: [6,  1200] loss: 0.214, avg_margin: 0.931. 
+2021-07-19 01:27:46,520:utils:INFO: Validate epoch 5
+2021-07-19 01:27:54,007:utils:INFO: Train epoch 6
+2021-07-19 01:28:03,600:utils:INFO: [7,   200] loss: 0.213, avg_margin: 0.940. 
+2021-07-19 01:28:12,873:utils:INFO: [7,   400] loss: 0.214, avg_margin: 0.939. 
+2021-07-19 01:28:22,211:utils:INFO: [7,   600] loss: 0.213, avg_margin: 0.939. 
+2021-07-19 01:28:31,495:utils:INFO: [7,   800] loss: 0.213, avg_margin: 0.940. 
+2021-07-19 01:28:40,796:utils:INFO: [7,  1000] loss: 0.214, avg_margin: 0.939. 
+2021-07-19 01:28:50,046:utils:INFO: [7,  1200] loss: 0.215, avg_margin: 0.939. 
+2021-07-19 01:28:53,420:utils:INFO: Validate epoch 6
+2021-07-19 01:29:00,855:utils:INFO: Train epoch 7
+2021-07-19 01:29:10,620:utils:INFO: [8,   200] loss: 0.216, avg_margin: 0.932. 
+2021-07-19 01:29:20,096:utils:INFO: [8,   400] loss: 0.213, avg_margin: 0.936. 
+2021-07-19 01:29:29,565:utils:INFO: [8,   600] loss: 0.216, avg_margin: 0.936. 
+2021-07-19 01:29:39,060:utils:INFO: [8,   800] loss: 0.215, avg_margin: 0.936. 
+2021-07-19 01:29:48,552:utils:INFO: [8,  1000] loss: 0.213, avg_margin: 0.936. 
+2021-07-19 01:29:58,069:utils:INFO: [8,  1200] loss: 0.211, avg_margin: 0.938. 
+2021-07-19 01:30:01,533:utils:INFO: Validate epoch 7
+2021-07-19 01:30:09,003:utils:INFO: Train epoch 8
+2021-07-19 01:30:18,572:utils:INFO: [9,   200] loss: 0.214, avg_margin: 0.943. 
+2021-07-19 01:30:27,991:utils:INFO: [9,   400] loss: 0.213, avg_margin: 0.942. 
+2021-07-19 01:30:37,298:utils:INFO: [9,   600] loss: 0.214, avg_margin: 0.941. 
+2021-07-19 01:30:46,776:utils:INFO: [9,   800] loss: 0.214, avg_margin: 0.941. 
+2021-07-19 01:30:56,157:utils:INFO: [9,  1000] loss: 0.214, avg_margin: 0.940. 
+2021-07-19 01:31:05,515:utils:INFO: [9,  1200] loss: 0.212, avg_margin: 0.940. 
+2021-07-19 01:31:08,870:utils:INFO: Validate epoch 8
+2021-07-19 01:31:16,317:utils:INFO: Train epoch 9
+2021-07-19 01:31:26,021:utils:INFO: [10,   200] loss: 0.214, avg_margin: 0.939. 
+2021-07-19 01:31:35,406:utils:INFO: [10,   400] loss: 0.211, avg_margin: 0.942. 
+2021-07-19 01:31:44,712:utils:INFO: [10,   600] loss: 0.212, avg_margin: 0.943. 
+2021-07-19 01:31:53,990:utils:INFO: [10,   800] loss: 0.214, avg_margin: 0.942. 
+2021-07-19 01:32:03,260:utils:INFO: [10,  1000] loss: 0.214, avg_margin: 0.941. 
+2021-07-19 01:32:12,540:utils:INFO: [10,  1200] loss: 0.210, avg_margin: 0.942. 
+2021-07-19 01:32:15,925:utils:INFO: Validate epoch 9
+2021-07-19 01:32:23,483:utils:INFO: Train epoch 10
+2021-07-19 01:32:33,226:utils:INFO: [11,   200] loss: 0.211, avg_margin: 0.951. 
+2021-07-19 01:32:42,598:utils:INFO: [11,   400] loss: 0.212, avg_margin: 0.948. 
+2021-07-19 01:32:51,944:utils:INFO: [11,   600] loss: 0.212, avg_margin: 0.946. 
+2021-07-19 01:33:01,351:utils:INFO: [11,   800] loss: 0.215, avg_margin: 0.944. 
+2021-07-19 01:33:10,834:utils:INFO: [11,  1000] loss: 0.216, avg_margin: 0.942. 
+2021-07-19 01:33:20,252:utils:INFO: [11,  1200] loss: 0.208, avg_margin: 0.944. 
+2021-07-19 01:33:23,693:utils:INFO: Validate epoch 10
+2021-07-19 01:33:31,141:utils:INFO: Train epoch 11
+2021-07-19 01:33:41,051:utils:INFO: [12,   200] loss: 0.212, avg_margin: 0.945. 
+2021-07-19 01:33:50,498:utils:INFO: [12,   400] loss: 0.215, avg_margin: 0.940. 
+2021-07-19 01:33:59,966:utils:INFO: [12,   600] loss: 0.214, avg_margin: 0.939. 
+2021-07-19 01:34:09,420:utils:INFO: [12,   800] loss: 0.210, avg_margin: 0.942. 
+2021-07-19 01:34:18,885:utils:INFO: [12,  1000] loss: 0.210, avg_margin: 0.943. 
+2021-07-19 01:34:28,376:utils:INFO: [12,  1200] loss: 0.209, avg_margin: 0.945. 
+2021-07-19 01:34:31,826:utils:INFO: Validate epoch 11
+2021-07-19 01:34:39,264:utils:INFO: Train epoch 12
+2021-07-19 01:34:48,982:utils:INFO: [13,   200] loss: 0.212, avg_margin: 0.944. 
+2021-07-19 01:34:58,411:utils:INFO: [13,   400] loss: 0.215, avg_margin: 0.941. 
+2021-07-19 01:35:07,776:utils:INFO: [13,   600] loss: 0.211, avg_margin: 0.943. 
+2021-07-19 01:35:17,119:utils:INFO: [13,   800] loss: 0.213, avg_margin: 0.943. 
+2021-07-19 01:35:26,541:utils:INFO: [13,  1000] loss: 0.208, avg_margin: 0.945. 
+2021-07-19 01:35:35,984:utils:INFO: [13,  1200] loss: 0.211, avg_margin: 0.946. 
+2021-07-19 01:35:39,451:utils:INFO: Validate epoch 12
+2021-07-19 01:35:46,909:utils:INFO: Train epoch 13
+2021-07-19 01:35:56,662:utils:INFO: [14,   200] loss: 0.210, avg_margin: 0.948. 
+2021-07-19 01:36:06,126:utils:INFO: [14,   400] loss: 0.213, avg_margin: 0.946. 
+2021-07-19 01:36:15,497:utils:INFO: [14,   600] loss: 0.209, avg_margin: 0.948. 
+2021-07-19 01:36:24,864:utils:INFO: [14,   800] loss: 0.214, avg_margin: 0.946. 
+2021-07-19 01:36:34,155:utils:INFO: [14,  1000] loss: 0.212, avg_margin: 0.946. 
+2021-07-19 01:36:43,457:utils:INFO: [14,  1200] loss: 0.207, avg_margin: 0.948. 
+2021-07-19 01:36:46,827:utils:INFO: Validate epoch 13
+2021-07-19 01:36:54,441:utils:INFO: Train epoch 14
+2021-07-19 01:37:04,125:utils:INFO: [15,   200] loss: 0.213, avg_margin: 0.944. 
+2021-07-19 01:37:13,455:utils:INFO: [15,   400] loss: 0.211, avg_margin: 0.947. 
+2021-07-19 01:37:22,824:utils:INFO: [15,   600] loss: 0.211, avg_margin: 0.948. 
+2021-07-19 01:37:32,151:utils:INFO: [15,   800] loss: 0.208, avg_margin: 0.949. 
+2021-07-19 01:37:41,548:utils:INFO: [15,  1000] loss: 0.211, avg_margin: 0.950. 
+2021-07-19 01:37:50,815:utils:INFO: [15,  1200] loss: 0.211, avg_margin: 0.950. 
+2021-07-19 01:37:54,170:utils:INFO: Validate epoch 14
+2021-07-19 01:38:01,741:utils:INFO: Train epoch 15
+2021-07-19 01:38:11,381:utils:INFO: [16,   200] loss: 0.209, avg_margin: 0.952. 
+2021-07-19 01:38:20,697:utils:INFO: [16,   400] loss: 0.203, avg_margin: 0.959. 
+2021-07-19 01:38:30,066:utils:INFO: [16,   600] loss: 0.210, avg_margin: 0.958. 
+2021-07-19 01:38:39,434:utils:INFO: [16,   800] loss: 0.214, avg_margin: 0.954. 
+2021-07-19 01:38:48,798:utils:INFO: [16,  1000] loss: 0.209, avg_margin: 0.954. 
+2021-07-19 01:38:58,101:utils:INFO: [16,  1200] loss: 0.208, avg_margin: 0.954. 
+2021-07-19 01:39:01,501:utils:INFO: Validate epoch 15
+2021-07-19 01:39:08,977:utils:INFO: Train epoch 16
+2021-07-19 01:39:18,686:utils:INFO: [17,   200] loss: 0.211, avg_margin: 0.948. 
+2021-07-19 01:39:27,951:utils:INFO: [17,   400] loss: 0.209, avg_margin: 0.950. 
+2021-07-19 01:39:37,270:utils:INFO: [17,   600] loss: 0.212, avg_margin: 0.949. 
+2021-07-19 01:39:46,636:utils:INFO: [17,   800] loss: 0.211, avg_margin: 0.949. 
+2021-07-19 01:39:55,924:utils:INFO: [17,  1000] loss: 0.207, avg_margin: 0.951. 
+2021-07-19 01:40:05,353:utils:INFO: [17,  1200] loss: 0.210, avg_margin: 0.952. 
+2021-07-19 01:40:08,754:utils:INFO: Validate epoch 16
+2021-07-19 01:40:16,266:utils:INFO: Train epoch 17
+2021-07-19 01:40:25,934:utils:INFO: [18,   200] loss: 0.210, avg_margin: 0.950. 
+2021-07-19 01:40:35,250:utils:INFO: [18,   400] loss: 0.211, avg_margin: 0.950. 
+2021-07-19 01:40:44,588:utils:INFO: [18,   600] loss: 0.210, avg_margin: 0.951. 
+2021-07-19 01:40:53,971:utils:INFO: [18,   800] loss: 0.210, avg_margin: 0.951. 
+2021-07-19 01:41:03,283:utils:INFO: [18,  1000] loss: 0.212, avg_margin: 0.950. 
+2021-07-19 01:41:12,588:utils:INFO: [18,  1200] loss: 0.207, avg_margin: 0.950. 
+2021-07-19 01:41:15,960:utils:INFO: Validate epoch 17
+2021-07-19 01:41:23,399:utils:INFO: Train epoch 18
+2021-07-19 01:41:33,024:utils:INFO: [19,   200] loss: 0.211, avg_margin: 0.951. 
+2021-07-19 01:41:42,350:utils:INFO: [19,   400] loss: 0.211, avg_margin: 0.949. 
+2021-07-19 01:41:51,673:utils:INFO: [19,   600] loss: 0.207, avg_margin: 0.952. 
+2021-07-19 01:42:00,960:utils:INFO: [19,   800] loss: 0.209, avg_margin: 0.953. 
+2021-07-19 01:42:10,175:utils:INFO: [19,  1000] loss: 0.208, avg_margin: 0.954. 
+2021-07-19 01:42:19,449:utils:INFO: [19,  1200] loss: 0.212, avg_margin: 0.953. 
+2021-07-19 01:42:22,799:utils:INFO: Validate epoch 18
+2021-07-19 01:42:30,207:utils:INFO: Train epoch 19
+2021-07-19 01:42:39,776:utils:INFO: [20,   200] loss: 0.208, avg_margin: 0.960. 
+2021-07-19 01:42:49,164:utils:INFO: [20,   400] loss: 0.208, avg_margin: 0.959. 
+2021-07-19 01:42:58,418:utils:INFO: [20,   600] loss: 0.212, avg_margin: 0.955. 
+2021-07-19 01:43:07,668:utils:INFO: [20,   800] loss: 0.210, avg_margin: 0.954. 
+2021-07-19 01:43:16,932:utils:INFO: [20,  1000] loss: 0.208, avg_margin: 0.954. 
+2021-07-19 01:43:26,182:utils:INFO: [20,  1200] loss: 0.208, avg_margin: 0.955. 
+2021-07-19 01:43:29,549:utils:INFO: Validate epoch 19
+2021-07-19 01:43:37,044:utils:INFO: Train epoch 20
+2021-07-19 01:43:46,732:utils:INFO: [21,   200] loss: 0.208, avg_margin: 0.956. 
+2021-07-19 01:43:56,200:utils:INFO: [21,   400] loss: 0.211, avg_margin: 0.952. 
+2021-07-19 01:44:05,769:utils:INFO: [21,   600] loss: 0.208, avg_margin: 0.954. 
+2021-07-19 01:44:15,193:utils:INFO: [21,   800] loss: 0.209, avg_margin: 0.954. 
+2021-07-19 01:44:24,550:utils:INFO: [21,  1000] loss: 0.209, avg_margin: 0.955. 
+2021-07-19 01:44:33,861:utils:INFO: [21,  1200] loss: 0.208, avg_margin: 0.955. 
+2021-07-19 01:44:37,254:utils:INFO: Validate epoch 20
+2021-07-19 01:44:44,659:utils:INFO: Train epoch 21
+2021-07-19 01:44:54,297:utils:INFO: [22,   200] loss: 0.209, avg_margin: 0.952. 
+2021-07-19 01:45:03,634:utils:INFO: [22,   400] loss: 0.208, avg_margin: 0.954. 
+2021-07-19 01:45:12,927:utils:INFO: [22,   600] loss: 0.207, avg_margin: 0.956. 
+2021-07-19 01:45:22,268:utils:INFO: [22,   800] loss: 0.211, avg_margin: 0.955. 
+2021-07-19 01:45:31,597:utils:INFO: [22,  1000] loss: 0.204, avg_margin: 0.957. 
+2021-07-19 01:45:40,904:utils:INFO: [22,  1200] loss: 0.209, avg_margin: 0.957. 
+2021-07-19 01:45:44,263:utils:INFO: Validate epoch 21
+2021-07-19 01:45:51,741:utils:INFO: Train epoch 22
+2021-07-19 01:46:01,598:utils:INFO: [23,   200] loss: 0.209, avg_margin: 0.952. 
+2021-07-19 01:46:11,170:utils:INFO: [23,   400] loss: 0.209, avg_margin: 0.955. 
+2021-07-19 01:46:20,686:utils:INFO: [23,   600] loss: 0.207, avg_margin: 0.956. 
+2021-07-19 01:46:30,217:utils:INFO: [23,   800] loss: 0.211, avg_margin: 0.954. 
+2021-07-19 01:46:39,700:utils:INFO: [23,  1000] loss: 0.211, avg_margin: 0.953. 
+2021-07-19 01:46:49,175:utils:INFO: [23,  1200] loss: 0.210, avg_margin: 0.953. 
+2021-07-19 01:46:52,635:utils:INFO: Validate epoch 22
+2021-07-19 01:47:00,055:utils:INFO: Train epoch 23
+2021-07-19 01:47:09,672:utils:INFO: [24,   200] loss: 0.208, avg_margin: 0.956. 
+2021-07-19 01:47:18,979:utils:INFO: [24,   400] loss: 0.214, avg_margin: 0.950. 
+2021-07-19 01:47:28,283:utils:INFO: [24,   600] loss: 0.205, avg_margin: 0.954. 
+2021-07-19 01:47:37,648:utils:INFO: [24,   800] loss: 0.212, avg_margin: 0.953. 
+2021-07-19 01:47:46,934:utils:INFO: [24,  1000] loss: 0.209, avg_margin: 0.954. 
+2021-07-19 01:47:56,260:utils:INFO: [24,  1200] loss: 0.208, avg_margin: 0.954. 
+2021-07-19 01:47:59,616:utils:INFO: Validate epoch 23
+2021-07-19 01:48:07,080:utils:INFO: Train epoch 24
+2021-07-19 01:48:16,996:utils:INFO: [25,   200] loss: 0.209, avg_margin: 0.955. 
+2021-07-19 01:48:26,611:utils:INFO: [25,   400] loss: 0.210, avg_margin: 0.955. 
+2021-07-19 01:48:36,343:utils:INFO: [25,   600] loss: 0.209, avg_margin: 0.955. 
+2021-07-19 01:48:46,062:utils:INFO: [25,   800] loss: 0.213, avg_margin: 0.953. 
+2021-07-19 01:48:55,765:utils:INFO: [25,  1000] loss: 0.206, avg_margin: 0.955. 
+2021-07-19 01:49:05,449:utils:INFO: [25,  1200] loss: 0.210, avg_margin: 0.955. 
+2021-07-19 01:49:08,961:utils:INFO: Validate epoch 24
+2021-07-19 01:49:16,476:utils:INFO: Train epoch 25
+2021-07-19 01:49:26,163:utils:INFO: [26,   200] loss: 0.207, avg_margin: 0.960. 
+2021-07-19 01:49:35,623:utils:INFO: [26,   400] loss: 0.209, avg_margin: 0.959. 
+2021-07-19 01:49:44,893:utils:INFO: [26,   600] loss: 0.207, avg_margin: 0.959. 
+2021-07-19 01:49:54,154:utils:INFO: [26,   800] loss: 0.205, avg_margin: 0.960. 
+2021-07-19 01:50:03,502:utils:INFO: [26,  1000] loss: 0.206, avg_margin: 0.961. 
+2021-07-19 01:50:12,802:utils:INFO: [26,  1200] loss: 0.212, avg_margin: 0.959. 
+2021-07-19 01:50:16,188:utils:INFO: Validate epoch 25
+2021-07-19 01:50:23,646:utils:INFO: Train epoch 26
+2021-07-19 01:50:33,341:utils:INFO: [27,   200] loss: 0.208, avg_margin: 0.955. 
+2021-07-19 01:50:42,741:utils:INFO: [27,   400] loss: 0.206, avg_margin: 0.960. 
+2021-07-19 01:50:52,050:utils:INFO: [27,   600] loss: 0.208, avg_margin: 0.959. 
+2021-07-19 01:51:01,438:utils:INFO: [27,   800] loss: 0.207, avg_margin: 0.959. 
+2021-07-19 01:51:10,741:utils:INFO: [27,  1000] loss: 0.205, avg_margin: 0.960. 
+2021-07-19 01:51:20,049:utils:INFO: [27,  1200] loss: 0.212, avg_margin: 0.958. 
+2021-07-19 01:51:23,453:utils:INFO: Validate epoch 26
+2021-07-19 01:51:30,891:utils:INFO: Train epoch 27
+2021-07-19 01:51:40,518:utils:INFO: [28,   200] loss: 0.207, avg_margin: 0.962. 
+2021-07-19 01:51:49,847:utils:INFO: [28,   400] loss: 0.208, avg_margin: 0.961. 
+2021-07-19 01:51:59,166:utils:INFO: [28,   600] loss: 0.202, avg_margin: 0.964. 
+2021-07-19 01:52:08,463:utils:INFO: [28,   800] loss: 0.214, avg_margin: 0.960. 
+2021-07-19 01:52:17,784:utils:INFO: [28,  1000] loss: 0.209, avg_margin: 0.958. 
+2021-07-19 01:52:27,075:utils:INFO: [28,  1200] loss: 0.207, avg_margin: 0.959. 
+2021-07-19 01:52:30,441:utils:INFO: Validate epoch 27
+2021-07-19 01:52:37,889:utils:INFO: Train epoch 28
+2021-07-19 01:52:47,574:utils:INFO: [29,   200] loss: 0.211, avg_margin: 0.950. 
+2021-07-19 01:52:56,929:utils:INFO: [29,   400] loss: 0.205, avg_margin: 0.956. 
+2021-07-19 01:53:06,306:utils:INFO: [29,   600] loss: 0.205, avg_margin: 0.960. 
+2021-07-19 01:53:15,735:utils:INFO: [29,   800] loss: 0.208, avg_margin: 0.960. 
+2021-07-19 01:53:25,075:utils:INFO: [29,  1000] loss: 0.209, avg_margin: 0.959. 
+2021-07-19 01:53:34,390:utils:INFO: [29,  1200] loss: 0.211, avg_margin: 0.958. 
+2021-07-19 01:53:37,783:utils:INFO: Validate epoch 28
+2021-07-19 01:53:45,288:utils:INFO: Train epoch 29
+2021-07-19 01:53:54,920:utils:INFO: [30,   200] loss: 0.214, avg_margin: 0.942. 
+2021-07-19 01:54:04,204:utils:INFO: [30,   400] loss: 0.206, avg_margin: 0.951. 
+2021-07-19 01:54:13,515:utils:INFO: [30,   600] loss: 0.210, avg_margin: 0.953. 
+2021-07-19 01:54:22,857:utils:INFO: [30,   800] loss: 0.208, avg_margin: 0.953. 
+2021-07-19 01:54:32,188:utils:INFO: [30,  1000] loss: 0.207, avg_margin: 0.955. 
+2021-07-19 01:54:41,465:utils:INFO: [30,  1200] loss: 0.205, avg_margin: 0.958. 
+2021-07-19 01:54:44,858:utils:INFO: Validate epoch 29
+2021-07-19 01:54:52,318:utils:INFO: Train epoch 30
+2021-07-19 01:55:02,098:utils:INFO: [31,   200] loss: 0.205, avg_margin: 0.965. 
+2021-07-19 01:55:11,582:utils:INFO: [31,   400] loss: 0.209, avg_margin: 0.961. 
+2021-07-19 01:55:21,056:utils:INFO: [31,   600] loss: 0.205, avg_margin: 0.962. 
+2021-07-19 01:55:30,516:utils:INFO: [31,   800] loss: 0.207, avg_margin: 0.962. 
+2021-07-19 01:55:39,949:utils:INFO: [31,  1000] loss: 0.209, avg_margin: 0.962. 
+2021-07-19 01:55:49,348:utils:INFO: [31,  1200] loss: 0.211, avg_margin: 0.961. 
+2021-07-19 01:55:52,769:utils:INFO: Validate epoch 30
+2021-07-19 01:56:00,194:utils:INFO: Train epoch 31
+2021-07-19 01:56:09,791:utils:INFO: [32,   200] loss: 0.207, avg_margin: 0.959. 
+2021-07-19 01:56:19,107:utils:INFO: [32,   400] loss: 0.211, avg_margin: 0.956. 
+2021-07-19 01:56:28,420:utils:INFO: [32,   600] loss: 0.207, avg_margin: 0.957. 
+2021-07-19 01:56:37,652:utils:INFO: [32,   800] loss: 0.209, avg_margin: 0.958. 
+2021-07-19 01:56:46,859:utils:INFO: [32,  1000] loss: 0.211, avg_margin: 0.957. 
+2021-07-19 01:56:56,134:utils:INFO: [32,  1200] loss: 0.209, avg_margin: 0.957. 
+2021-07-19 01:56:59,501:utils:INFO: Validate epoch 31
+2021-07-19 01:57:07,080:utils:INFO: Train epoch 32
+2021-07-19 01:57:16,838:utils:INFO: [33,   200] loss: 0.209, avg_margin: 0.955. 
+2021-07-19 01:57:26,304:utils:INFO: [33,   400] loss: 0.207, avg_margin: 0.960. 
+2021-07-19 01:57:35,781:utils:INFO: [33,   600] loss: 0.207, avg_margin: 0.960. 
+2021-07-19 01:57:45,282:utils:INFO: [33,   800] loss: 0.209, avg_margin: 0.960. 
+2021-07-19 01:57:54,705:utils:INFO: [33,  1000] loss: 0.211, avg_margin: 0.958. 
+2021-07-19 01:58:04,186:utils:INFO: [33,  1200] loss: 0.206, avg_margin: 0.959. 
+2021-07-19 01:58:07,601:utils:INFO: Validate epoch 32
+2021-07-19 01:58:15,095:utils:INFO: Train epoch 33
+2021-07-19 01:58:24,828:utils:INFO: [34,   200] loss: 0.207, avg_margin: 0.963. 
+2021-07-19 01:58:34,085:utils:INFO: [34,   400] loss: 0.208, avg_margin: 0.961. 
+2021-07-19 01:58:43,350:utils:INFO: [34,   600] loss: 0.209, avg_margin: 0.960. 
+2021-07-19 01:58:52,655:utils:INFO: [34,   800] loss: 0.206, avg_margin: 0.960. 
+2021-07-19 01:59:02,033:utils:INFO: [34,  1000] loss: 0.209, avg_margin: 0.960. 
+2021-07-19 01:59:11,348:utils:INFO: [34,  1200] loss: 0.211, avg_margin: 0.959. 
+2021-07-19 01:59:14,716:utils:INFO: Validate epoch 33
+2021-07-19 01:59:22,268:utils:INFO: Train epoch 34
+2021-07-19 01:59:31,985:utils:INFO: [35,   200] loss: 0.208, avg_margin: 0.960. 
+2021-07-19 01:59:41,272:utils:INFO: [35,   400] loss: 0.211, avg_margin: 0.955. 
+2021-07-19 01:59:50,629:utils:INFO: [35,   600] loss: 0.209, avg_margin: 0.955. 
+2021-07-19 01:59:59,979:utils:INFO: [35,   800] loss: 0.207, avg_margin: 0.958. 
+2021-07-19 02:00:09,397:utils:INFO: [35,  1000] loss: 0.205, avg_margin: 0.960. 
+2021-07-19 02:00:18,777:utils:INFO: [35,  1200] loss: 0.210, avg_margin: 0.959. 
+2021-07-19 02:00:22,270:utils:INFO: Validate epoch 34
+2021-07-19 02:00:29,735:utils:INFO: Train epoch 35
+2021-07-19 02:00:39,555:utils:INFO: [36,   200] loss: 0.206, avg_margin: 0.966. 
+2021-07-19 02:00:49,089:utils:INFO: [36,   400] loss: 0.203, avg_margin: 0.969. 
+2021-07-19 02:00:58,669:utils:INFO: [36,   600] loss: 0.211, avg_margin: 0.964. 
+2021-07-19 02:01:08,174:utils:INFO: [36,   800] loss: 0.207, avg_margin: 0.964. 
+2021-07-19 02:01:17,670:utils:INFO: [36,  1000] loss: 0.208, avg_margin: 0.964. 
+2021-07-19 02:01:27,260:utils:INFO: [36,  1200] loss: 0.211, avg_margin: 0.962. 
+2021-07-19 02:01:30,745:utils:INFO: Validate epoch 35
+2021-07-19 02:01:38,277:utils:INFO: Train epoch 36
+2021-07-19 02:01:47,929:utils:INFO: [37,   200] loss: 0.211, avg_margin: 0.953. 
+2021-07-19 02:01:57,332:utils:INFO: [37,   400] loss: 0.209, avg_margin: 0.954. 
+2021-07-19 02:02:06,673:utils:INFO: [37,   600] loss: 0.204, avg_margin: 0.959. 
+2021-07-19 02:02:16,068:utils:INFO: [37,   800] loss: 0.206, avg_margin: 0.961. 
+2021-07-19 02:02:25,456:utils:INFO: [37,  1000] loss: 0.211, avg_margin: 0.960. 
+2021-07-19 02:02:34,752:utils:INFO: [37,  1200] loss: 0.207, avg_margin: 0.960. 
+2021-07-19 02:02:38,132:utils:INFO: Validate epoch 36
+2021-07-19 02:02:45,590:utils:INFO: Train epoch 37
+2021-07-19 02:02:55,704:utils:INFO: [38,   200] loss: 0.206, avg_margin: 0.966. 
+2021-07-19 02:03:05,489:utils:INFO: [38,   400] loss: 0.206, avg_margin: 0.964. 
+2021-07-19 02:03:15,133:utils:INFO: [38,   600] loss: 0.212, avg_margin: 0.961. 
+2021-07-19 02:03:24,794:utils:INFO: [38,   800] loss: 0.208, avg_margin: 0.960. 
+2021-07-19 02:03:34,433:utils:INFO: [38,  1000] loss: 0.207, avg_margin: 0.961. 
+2021-07-19 02:03:44,045:utils:INFO: [38,  1200] loss: 0.207, avg_margin: 0.961. 
+2021-07-19 02:03:47,503:utils:INFO: Validate epoch 37
+2021-07-19 02:03:54,959:utils:INFO: Train epoch 38
+2021-07-19 02:04:04,655:utils:INFO: [39,   200] loss: 0.206, avg_margin: 0.965. 
+2021-07-19 02:04:14,136:utils:INFO: [39,   400] loss: 0.211, avg_margin: 0.961. 
+2021-07-19 02:04:23,511:utils:INFO: [39,   600] loss: 0.208, avg_margin: 0.960. 
+2021-07-19 02:04:32,894:utils:INFO: [39,   800] loss: 0.211, avg_margin: 0.959. 
+2021-07-19 02:04:42,269:utils:INFO: [39,  1000] loss: 0.209, avg_margin: 0.958. 
+2021-07-19 02:04:51,639:utils:INFO: [39,  1200] loss: 0.208, avg_margin: 0.959. 
+2021-07-19 02:04:55,057:utils:INFO: Validate epoch 38
+2021-07-19 02:05:02,595:utils:INFO: Train epoch 39
+2021-07-19 02:05:12,275:utils:INFO: [40,   200] loss: 0.206, avg_margin: 0.965. 
+2021-07-19 02:05:21,734:utils:INFO: [40,   400] loss: 0.207, avg_margin: 0.965. 
+2021-07-19 02:05:31,180:utils:INFO: [40,   600] loss: 0.210, avg_margin: 0.962. 
+2021-07-19 02:05:40,565:utils:INFO: [40,   800] loss: 0.206, avg_margin: 0.962. 
+2021-07-19 02:05:49,990:utils:INFO: [40,  1000] loss: 0.213, avg_margin: 0.960. 
+2021-07-19 02:05:59,457:utils:INFO: [40,  1200] loss: 0.206, avg_margin: 0.961. 
+2021-07-19 02:06:02,871:utils:INFO: Validate epoch 39
+2021-07-19 02:06:10,317:utils:INFO: Train epoch 40
+2021-07-19 02:06:20,005:utils:INFO: [41,   200] loss: 0.200, avg_margin: 0.979. 
+2021-07-19 02:06:29,390:utils:INFO: [41,   400] loss: 0.208, avg_margin: 0.972. 
+2021-07-19 02:06:38,776:utils:INFO: [41,   600] loss: 0.210, avg_margin: 0.967. 
+2021-07-19 02:06:48,097:utils:INFO: [41,   800] loss: 0.209, avg_margin: 0.964. 
+2021-07-19 02:06:57,387:utils:INFO: [41,  1000] loss: 0.202, avg_margin: 0.966. 
+2021-07-19 02:07:06,666:utils:INFO: [41,  1200] loss: 0.207, avg_margin: 0.966. 
+2021-07-19 02:07:10,046:utils:INFO: Validate epoch 40
+2021-07-19 02:07:17,525:utils:INFO: Train epoch 41
+2021-07-19 02:07:27,271:utils:INFO: [42,   200] loss: 0.209, avg_margin: 0.957. 
+2021-07-19 02:07:36,677:utils:INFO: [42,   400] loss: 0.208, avg_margin: 0.959. 
+2021-07-19 02:07:46,127:utils:INFO: [42,   600] loss: 0.207, avg_margin: 0.960. 
+2021-07-19 02:07:55,556:utils:INFO: [42,   800] loss: 0.207, avg_margin: 0.962. 
+2021-07-19 02:08:05,036:utils:INFO: [42,  1000] loss: 0.208, avg_margin: 0.961. 
+2021-07-19 02:08:14,438:utils:INFO: [42,  1200] loss: 0.204, avg_margin: 0.962. 
+2021-07-19 02:08:17,873:utils:INFO: Validate epoch 41
+2021-07-19 02:08:25,359:utils:INFO: Train epoch 42
+2021-07-19 02:08:34,981:utils:INFO: [43,   200] loss: 0.208, avg_margin: 0.963. 
+2021-07-19 02:08:44,304:utils:INFO: [43,   400] loss: 0.210, avg_margin: 0.960. 
+2021-07-19 02:08:53,668:utils:INFO: [43,   600] loss: 0.212, avg_margin: 0.958. 
+2021-07-19 02:09:02,951:utils:INFO: [43,   800] loss: 0.207, avg_margin: 0.958. 
+2021-07-19 02:09:12,188:utils:INFO: [43,  1000] loss: 0.203, avg_margin: 0.961. 
+2021-07-19 02:09:21,451:utils:INFO: [43,  1200] loss: 0.209, avg_margin: 0.961. 
+2021-07-19 02:09:24,867:utils:INFO: Validate epoch 42
+2021-07-19 02:09:32,448:utils:INFO: Train epoch 43
+2021-07-19 02:09:42,098:utils:INFO: [44,   200] loss: 0.208, avg_margin: 0.961. 
+2021-07-19 02:09:51,377:utils:INFO: [44,   400] loss: 0.207, avg_margin: 0.963. 
+2021-07-19 02:10:00,721:utils:INFO: [44,   600] loss: 0.206, avg_margin: 0.964. 
+2021-07-19 02:10:10,010:utils:INFO: [44,   800] loss: 0.205, avg_margin: 0.966. 
+2021-07-19 02:10:19,246:utils:INFO: [44,  1000] loss: 0.210, avg_margin: 0.964. 
+2021-07-19 02:10:28,536:utils:INFO: [44,  1200] loss: 0.209, avg_margin: 0.963. 
+2021-07-19 02:10:31,921:utils:INFO: Validate epoch 43
+2021-07-19 02:10:39,357:utils:INFO: Train epoch 44
+2021-07-19 02:10:49,185:utils:INFO: [45,   200] loss: 0.207, avg_margin: 0.964. 
+2021-07-19 02:10:58,632:utils:INFO: [45,   400] loss: 0.203, avg_margin: 0.968. 
+2021-07-19 02:11:08,221:utils:INFO: [45,   600] loss: 0.208, avg_margin: 0.967. 
+2021-07-19 02:11:17,759:utils:INFO: [45,   800] loss: 0.205, avg_margin: 0.967. 
+2021-07-19 02:11:27,344:utils:INFO: [45,  1000] loss: 0.204, avg_margin: 0.968. 
+2021-07-19 02:11:36,877:utils:INFO: [45,  1200] loss: 0.207, avg_margin: 0.967. 
+2021-07-19 02:11:40,370:utils:INFO: Validate epoch 44
+2021-07-19 02:11:47,911:utils:INFO: Train epoch 45
+2021-07-19 02:11:57,508:utils:INFO: [46,   200] loss: 0.201, avg_margin: 0.979. 
+2021-07-19 02:12:06,903:utils:INFO: [46,   400] loss: 0.212, avg_margin: 0.967. 
+2021-07-19 02:12:16,246:utils:INFO: [46,   600] loss: 0.207, avg_margin: 0.965. 
+2021-07-19 02:12:25,591:utils:INFO: [46,   800] loss: 0.208, avg_margin: 0.964. 
+2021-07-19 02:12:34,951:utils:INFO: [46,  1000] loss: 0.205, avg_margin: 0.965. 
+2021-07-19 02:12:44,321:utils:INFO: [46,  1200] loss: 0.208, avg_margin: 0.965. 
+2021-07-19 02:12:47,688:utils:INFO: Validate epoch 45
+2021-07-19 02:12:55,124:utils:INFO: Train epoch 46
+2021-07-19 02:13:04,737:utils:INFO: [47,   200] loss: 0.206, avg_margin: 0.965. 
+2021-07-19 02:13:14,066:utils:INFO: [47,   400] loss: 0.210, avg_margin: 0.962. 
+2021-07-19 02:13:23,342:utils:INFO: [47,   600] loss: 0.207, avg_margin: 0.963. 
+2021-07-19 02:13:32,672:utils:INFO: [47,   800] loss: 0.207, avg_margin: 0.963. 
+2021-07-19 02:13:41,984:utils:INFO: [47,  1000] loss: 0.210, avg_margin: 0.962. 
+2021-07-19 02:13:51,341:utils:INFO: [47,  1200] loss: 0.207, avg_margin: 0.963. 
+2021-07-19 02:13:54,716:utils:INFO: Validate epoch 46
+2021-07-19 02:14:02,206:utils:INFO: Train epoch 47
+2021-07-19 02:14:11,829:utils:INFO: [48,   200] loss: 0.207, avg_margin: 0.965. 
+2021-07-19 02:14:21,110:utils:INFO: [48,   400] loss: 0.210, avg_margin: 0.961. 
+2021-07-19 02:14:30,311:utils:INFO: [48,   600] loss: 0.208, avg_margin: 0.961. 
+2021-07-19 02:14:39,561:utils:INFO: [48,   800] loss: 0.204, avg_margin: 0.963. 
+2021-07-19 02:14:48,852:utils:INFO: [48,  1000] loss: 0.208, avg_margin: 0.963. 
+2021-07-19 02:14:58,080:utils:INFO: [48,  1200] loss: 0.207, avg_margin: 0.963. 
+2021-07-19 02:15:01,429:utils:INFO: Validate epoch 47
+2021-07-19 02:15:08,917:utils:INFO: Train epoch 48
+2021-07-19 02:15:18,565:utils:INFO: [49,   200] loss: 0.205, avg_margin: 0.971. 
+2021-07-19 02:15:27,906:utils:INFO: [49,   400] loss: 0.206, avg_margin: 0.969. 
+2021-07-19 02:15:37,253:utils:INFO: [49,   600] loss: 0.205, avg_margin: 0.969. 
+2021-07-19 02:15:46,620:utils:INFO: [49,   800] loss: 0.209, avg_margin: 0.967. 
+2021-07-19 02:15:55,928:utils:INFO: [49,  1000] loss: 0.209, avg_margin: 0.966. 
+2021-07-19 02:16:05,383:utils:INFO: [49,  1200] loss: 0.205, avg_margin: 0.966. 
+2021-07-19 02:16:08,769:utils:INFO: Validate epoch 48
+2021-07-19 02:16:16,186:utils:INFO: Train epoch 49
+2021-07-19 02:16:25,924:utils:INFO: [50,   200] loss: 0.210, avg_margin: 0.961. 
+2021-07-19 02:16:35,359:utils:INFO: [50,   400] loss: 0.206, avg_margin: 0.964. 
+2021-07-19 02:16:44,823:utils:INFO: [50,   600] loss: 0.208, avg_margin: 0.963. 
+2021-07-19 02:16:54,260:utils:INFO: [50,   800] loss: 0.210, avg_margin: 0.963. 
+2021-07-19 02:17:03,696:utils:INFO: [50,  1000] loss: 0.208, avg_margin: 0.962. 
+2021-07-19 02:17:13,129:utils:INFO: [50,  1200] loss: 0.208, avg_margin: 0.962. 
+2021-07-19 02:17:16,578:utils:INFO: Validate epoch 49
+2021-07-19 02:17:24,181:utils:INFO: Train epoch 50
+2021-07-19 02:17:33,929:utils:INFO: [51,   200] loss: 0.207, avg_margin: 0.967. 
+2021-07-19 02:17:43,309:utils:INFO: [51,   400] loss: 0.205, avg_margin: 0.967. 
+2021-07-19 02:17:52,689:utils:INFO: [51,   600] loss: 0.208, avg_margin: 0.967. 
+2021-07-19 02:18:02,006:utils:INFO: [51,   800] loss: 0.204, avg_margin: 0.969. 
+2021-07-19 02:18:11,349:utils:INFO: [51,  1000] loss: 0.210, avg_margin: 0.967. 
+2021-07-19 02:18:20,657:utils:INFO: [51,  1200] loss: 0.207, avg_margin: 0.967. 
+2021-07-19 02:18:24,073:utils:INFO: Validate epoch 50
+2021-07-19 02:18:31,526:utils:INFO: Train epoch 51
+2021-07-19 02:18:41,218:utils:INFO: [52,   200] loss: 0.209, avg_margin: 0.959. 
+2021-07-19 02:18:50,621:utils:INFO: [52,   400] loss: 0.203, avg_margin: 0.966. 
+2021-07-19 02:18:59,996:utils:INFO: [52,   600] loss: 0.209, avg_margin: 0.965. 
+2021-07-19 02:19:09,440:utils:INFO: [52,   800] loss: 0.208, avg_margin: 0.964. 
+2021-07-19 02:19:18,790:utils:INFO: [52,  1000] loss: 0.204, avg_margin: 0.966. 
+2021-07-19 02:19:28,145:utils:INFO: [52,  1200] loss: 0.209, avg_margin: 0.965. 
+2021-07-19 02:19:31,523:utils:INFO: Validate epoch 51
+2021-07-19 02:19:39,332:utils:INFO: Train epoch 52
+2021-07-19 02:19:49,065:utils:INFO: [53,   200] loss: 0.214, avg_margin: 0.950. 
+2021-07-19 02:19:58,336:utils:INFO: [53,   400] loss: 0.202, avg_margin: 0.961. 
+2021-07-19 02:20:07,685:utils:INFO: [53,   600] loss: 0.210, avg_margin: 0.963. 
+2021-07-19 02:20:17,110:utils:INFO: [53,   800] loss: 0.212, avg_margin: 0.961. 
+2021-07-19 02:20:26,465:utils:INFO: [53,  1000] loss: 0.206, avg_margin: 0.961. 
+2021-07-19 02:20:35,913:utils:INFO: [53,  1200] loss: 0.208, avg_margin: 0.961. 
+2021-07-19 02:20:39,291:utils:INFO: Validate epoch 52
+2021-07-19 02:20:46,914:utils:INFO: Train epoch 53
+2021-07-19 02:20:56,596:utils:INFO: [54,   200] loss: 0.204, avg_margin: 0.973. 
+2021-07-19 02:21:06,078:utils:INFO: [54,   400] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:21:15,530:utils:INFO: [54,   600] loss: 0.208, avg_margin: 0.969. 
+2021-07-19 02:21:25,074:utils:INFO: [54,   800] loss: 0.209, avg_margin: 0.966. 
+2021-07-19 02:21:34,547:utils:INFO: [54,  1000] loss: 0.206, avg_margin: 0.967. 
+2021-07-19 02:21:43,996:utils:INFO: [54,  1200] loss: 0.206, avg_margin: 0.967. 
+2021-07-19 02:21:47,401:utils:INFO: Validate epoch 53
+2021-07-19 02:21:54,944:utils:INFO: Train epoch 54
+2021-07-19 02:22:04,651:utils:INFO: [55,   200] loss: 0.209, avg_margin: 0.958. 
+2021-07-19 02:22:13,984:utils:INFO: [55,   400] loss: 0.209, avg_margin: 0.959. 
+2021-07-19 02:22:23,328:utils:INFO: [55,   600] loss: 0.204, avg_margin: 0.963. 
+2021-07-19 02:22:32,597:utils:INFO: [55,   800] loss: 0.208, avg_margin: 0.963. 
+2021-07-19 02:22:41,907:utils:INFO: [55,  1000] loss: 0.209, avg_margin: 0.963. 
+2021-07-19 02:22:51,202:utils:INFO: [55,  1200] loss: 0.204, avg_margin: 0.965. 
+2021-07-19 02:22:54,583:utils:INFO: Validate epoch 54
+2021-07-19 02:23:02,153:utils:INFO: Train epoch 55
+2021-07-19 02:23:11,760:utils:INFO: [56,   200] loss: 0.210, avg_margin: 0.957. 
+2021-07-19 02:23:21,090:utils:INFO: [56,   400] loss: 0.206, avg_margin: 0.961. 
+2021-07-19 02:23:30,408:utils:INFO: [56,   600] loss: 0.207, avg_margin: 0.962. 
+2021-07-19 02:23:39,853:utils:INFO: [56,   800] loss: 0.204, avg_margin: 0.965. 
+2021-07-19 02:23:49,184:utils:INFO: [56,  1000] loss: 0.204, avg_margin: 0.967. 
+2021-07-19 02:23:58,475:utils:INFO: [56,  1200] loss: 0.206, avg_margin: 0.967. 
+2021-07-19 02:24:01,834:utils:INFO: Validate epoch 55
+2021-07-19 02:24:09,336:utils:INFO: Train epoch 56
+2021-07-19 02:24:19,039:utils:INFO: [57,   200] loss: 0.209, avg_margin: 0.960. 
+2021-07-19 02:24:28,430:utils:INFO: [57,   400] loss: 0.209, avg_margin: 0.961. 
+2021-07-19 02:24:37,785:utils:INFO: [57,   600] loss: 0.206, avg_margin: 0.963. 
+2021-07-19 02:24:47,186:utils:INFO: [57,   800] loss: 0.203, avg_margin: 0.966. 
+2021-07-19 02:24:56,551:utils:INFO: [57,  1000] loss: 0.207, avg_margin: 0.966. 
+2021-07-19 02:25:05,899:utils:INFO: [57,  1200] loss: 0.205, avg_margin: 0.967. 
+2021-07-19 02:25:09,297:utils:INFO: Validate epoch 56
+2021-07-19 02:25:16,743:utils:INFO: Train epoch 57
+2021-07-19 02:25:26,443:utils:INFO: [58,   200] loss: 0.203, avg_margin: 0.973. 
+2021-07-19 02:25:35,822:utils:INFO: [58,   400] loss: 0.202, avg_margin: 0.976. 
+2021-07-19 02:25:45,170:utils:INFO: [58,   600] loss: 0.205, avg_margin: 0.975. 
+2021-07-19 02:25:54,499:utils:INFO: [58,   800] loss: 0.209, avg_margin: 0.972. 
+2021-07-19 02:26:03,838:utils:INFO: [58,  1000] loss: 0.210, avg_margin: 0.969. 
+2021-07-19 02:26:13,225:utils:INFO: [58,  1200] loss: 0.209, avg_margin: 0.967. 
+2021-07-19 02:26:16,609:utils:INFO: Validate epoch 57
+2021-07-19 02:26:24,215:utils:INFO: Train epoch 58
+2021-07-19 02:26:33,885:utils:INFO: [59,   200] loss: 0.204, avg_margin: 0.966. 
+2021-07-19 02:26:43,307:utils:INFO: [59,   400] loss: 0.202, avg_margin: 0.974. 
+2021-07-19 02:26:52,601:utils:INFO: [59,   600] loss: 0.205, avg_margin: 0.974. 
+2021-07-19 02:27:01,862:utils:INFO: [59,   800] loss: 0.210, avg_margin: 0.971. 
+2021-07-19 02:27:11,193:utils:INFO: [59,  1000] loss: 0.208, avg_margin: 0.969. 
+2021-07-19 02:27:20,595:utils:INFO: [59,  1200] loss: 0.206, avg_margin: 0.969. 
+2021-07-19 02:27:23,977:utils:INFO: Validate epoch 58
+2021-07-19 02:27:31,706:utils:INFO: Train epoch 59
+2021-07-19 02:27:41,605:utils:INFO: [60,   200] loss: 0.207, avg_margin: 0.966. 
+2021-07-19 02:27:51,082:utils:INFO: [60,   400] loss: 0.205, avg_margin: 0.968. 
+2021-07-19 02:28:00,585:utils:INFO: [60,   600] loss: 0.204, avg_margin: 0.969. 
+2021-07-19 02:28:10,079:utils:INFO: [60,   800] loss: 0.209, avg_margin: 0.967. 
+2021-07-19 02:28:19,596:utils:INFO: [60,  1000] loss: 0.207, avg_margin: 0.967. 
+2021-07-19 02:28:29,067:utils:INFO: [60,  1200] loss: 0.203, avg_margin: 0.968. 
+2021-07-19 02:28:32,510:utils:INFO: Validate epoch 59
+2021-07-19 02:28:39,948:utils:INFO: Train epoch 60
+2021-07-19 02:28:49,647:utils:INFO: [61,   200] loss: 0.207, avg_margin: 0.968. 
+2021-07-19 02:28:59,004:utils:INFO: [61,   400] loss: 0.210, avg_margin: 0.964. 
+2021-07-19 02:29:08,368:utils:INFO: [61,   600] loss: 0.205, avg_margin: 0.966. 
+2021-07-19 02:29:17,722:utils:INFO: [61,   800] loss: 0.207, avg_margin: 0.966. 
+2021-07-19 02:29:27,067:utils:INFO: [61,  1000] loss: 0.205, avg_margin: 0.967. 
+2021-07-19 02:29:36,362:utils:INFO: [61,  1200] loss: 0.206, avg_margin: 0.967. 
+2021-07-19 02:29:39,737:utils:INFO: Validate epoch 60
+2021-07-19 02:29:47,168:utils:INFO: Train epoch 61
+2021-07-19 02:29:56,842:utils:INFO: [62,   200] loss: 0.203, avg_margin: 0.978. 
+2021-07-19 02:30:06,246:utils:INFO: [62,   400] loss: 0.204, avg_margin: 0.977. 
+2021-07-19 02:30:15,671:utils:INFO: [62,   600] loss: 0.207, avg_margin: 0.974. 
+2021-07-19 02:30:25,084:utils:INFO: [62,   800] loss: 0.208, avg_margin: 0.971. 
+2021-07-19 02:30:34,453:utils:INFO: [62,  1000] loss: 0.207, avg_margin: 0.970. 
+2021-07-19 02:30:43,879:utils:INFO: [62,  1200] loss: 0.206, avg_margin: 0.969. 
+2021-07-19 02:30:47,343:utils:INFO: Validate epoch 61
+2021-07-19 02:30:54,859:utils:INFO: Train epoch 62
+2021-07-19 02:31:04,576:utils:INFO: [63,   200] loss: 0.206, avg_margin: 0.969. 
+2021-07-19 02:31:13,950:utils:INFO: [63,   400] loss: 0.207, avg_margin: 0.969. 
+2021-07-19 02:31:23,359:utils:INFO: [63,   600] loss: 0.204, avg_margin: 0.970. 
+2021-07-19 02:31:32,740:utils:INFO: [63,   800] loss: 0.205, avg_margin: 0.970. 
+2021-07-19 02:31:42,100:utils:INFO: [63,  1000] loss: 0.210, avg_margin: 0.968. 
+2021-07-19 02:31:51,440:utils:INFO: [63,  1200] loss: 0.207, avg_margin: 0.968. 
+2021-07-19 02:31:54,828:utils:INFO: Validate epoch 62
+2021-07-19 02:32:02,278:utils:INFO: Train epoch 63
+2021-07-19 02:32:12,028:utils:INFO: [64,   200] loss: 0.207, avg_margin: 0.966. 
+2021-07-19 02:32:21,340:utils:INFO: [64,   400] loss: 0.204, avg_margin: 0.968. 
+2021-07-19 02:32:30,651:utils:INFO: [64,   600] loss: 0.209, avg_margin: 0.966. 
+2021-07-19 02:32:40,020:utils:INFO: [64,   800] loss: 0.208, avg_margin: 0.966. 
+2021-07-19 02:32:49,320:utils:INFO: [64,  1000] loss: 0.211, avg_margin: 0.963. 
+2021-07-19 02:32:58,601:utils:INFO: [64,  1200] loss: 0.204, avg_margin: 0.965. 
+2021-07-19 02:33:01,981:utils:INFO: Validate epoch 63
+2021-07-19 02:33:09,431:utils:INFO: Train epoch 64
+2021-07-19 02:33:19,104:utils:INFO: [65,   200] loss: 0.205, avg_margin: 0.970. 
+2021-07-19 02:33:28,547:utils:INFO: [65,   400] loss: 0.208, avg_margin: 0.968. 
+2021-07-19 02:33:37,976:utils:INFO: [65,   600] loss: 0.209, avg_margin: 0.966. 
+2021-07-19 02:33:47,416:utils:INFO: [65,   800] loss: 0.206, avg_margin: 0.966. 
+2021-07-19 02:33:56,838:utils:INFO: [65,  1000] loss: 0.205, avg_margin: 0.967. 
+2021-07-19 02:34:06,241:utils:INFO: [65,  1200] loss: 0.203, avg_margin: 0.969. 
+2021-07-19 02:34:09,649:utils:INFO: Validate epoch 64
+2021-07-19 02:34:17,163:utils:INFO: Train epoch 65
+2021-07-19 02:34:26,958:utils:INFO: [66,   200] loss: 0.208, avg_margin: 0.965. 
+2021-07-19 02:34:36,355:utils:INFO: [66,   400] loss: 0.203, avg_margin: 0.970. 
+2021-07-19 02:34:45,830:utils:INFO: [66,   600] loss: 0.207, avg_margin: 0.969. 
+2021-07-19 02:34:55,324:utils:INFO: [66,   800] loss: 0.207, avg_margin: 0.968. 
+2021-07-19 02:35:04,879:utils:INFO: [66,  1000] loss: 0.200, avg_margin: 0.970. 
+2021-07-19 02:35:14,452:utils:INFO: [66,  1200] loss: 0.210, avg_margin: 0.969. 
+2021-07-19 02:35:17,913:utils:INFO: Validate epoch 65
+2021-07-19 02:35:25,365:utils:INFO: Train epoch 66
+2021-07-19 02:35:35,085:utils:INFO: [67,   200] loss: 0.203, avg_margin: 0.974. 
+2021-07-19 02:35:44,496:utils:INFO: [67,   400] loss: 0.207, avg_margin: 0.972. 
+2021-07-19 02:35:53,921:utils:INFO: [67,   600] loss: 0.208, avg_margin: 0.969. 
+2021-07-19 02:36:03,248:utils:INFO: [67,   800] loss: 0.208, avg_margin: 0.968. 
+2021-07-19 02:36:12,681:utils:INFO: [67,  1000] loss: 0.206, avg_margin: 0.968. 
+2021-07-19 02:36:22,071:utils:INFO: [67,  1200] loss: 0.207, avg_margin: 0.967. 
+2021-07-19 02:36:25,495:utils:INFO: Validate epoch 66
+2021-07-19 02:36:32,990:utils:INFO: Train epoch 67
+2021-07-19 02:36:42,718:utils:INFO: [68,   200] loss: 0.203, avg_margin: 0.977. 
+2021-07-19 02:36:52,044:utils:INFO: [68,   400] loss: 0.207, avg_margin: 0.973. 
+2021-07-19 02:37:01,552:utils:INFO: [68,   600] loss: 0.208, avg_margin: 0.970. 
+2021-07-19 02:37:11,002:utils:INFO: [68,   800] loss: 0.206, avg_margin: 0.970. 
+2021-07-19 02:37:20,361:utils:INFO: [68,  1000] loss: 0.207, avg_margin: 0.970. 
+2021-07-19 02:37:29,778:utils:INFO: [68,  1200] loss: 0.203, avg_margin: 0.970. 
+2021-07-19 02:37:33,153:utils:INFO: Validate epoch 67
+2021-07-19 02:37:40,607:utils:INFO: Train epoch 68
+2021-07-19 02:37:50,248:utils:INFO: [69,   200] loss: 0.204, avg_margin: 0.975. 
+2021-07-19 02:37:59,546:utils:INFO: [69,   400] loss: 0.204, avg_margin: 0.976. 
+2021-07-19 02:38:08,790:utils:INFO: [69,   600] loss: 0.206, avg_margin: 0.974. 
+2021-07-19 02:38:18,078:utils:INFO: [69,   800] loss: 0.206, avg_margin: 0.973. 
+2021-07-19 02:38:27,380:utils:INFO: [69,  1000] loss: 0.208, avg_margin: 0.971. 
+2021-07-19 02:38:36,751:utils:INFO: [69,  1200] loss: 0.205, avg_margin: 0.971. 
+2021-07-19 02:38:40,117:utils:INFO: Validate epoch 68
+2021-07-19 02:38:47,651:utils:INFO: Train epoch 69
+2021-07-19 02:38:57,324:utils:INFO: [70,   200] loss: 0.205, avg_margin: 0.971. 
+2021-07-19 02:39:06,657:utils:INFO: [70,   400] loss: 0.203, avg_margin: 0.976. 
+2021-07-19 02:39:15,947:utils:INFO: [70,   600] loss: 0.204, avg_margin: 0.975. 
+2021-07-19 02:39:25,305:utils:INFO: [70,   800] loss: 0.211, avg_margin: 0.970. 
+2021-07-19 02:39:34,683:utils:INFO: [70,  1000] loss: 0.207, avg_margin: 0.969. 
+2021-07-19 02:39:44,010:utils:INFO: [70,  1200] loss: 0.207, avg_margin: 0.968. 
+2021-07-19 02:39:47,419:utils:INFO: Validate epoch 69
+2021-07-19 02:39:55,027:utils:INFO: Train epoch 70
+2021-07-19 02:40:04,671:utils:INFO: [71,   200] loss: 0.204, avg_margin: 0.977. 
+2021-07-19 02:40:14,020:utils:INFO: [71,   400] loss: 0.205, avg_margin: 0.974. 
+2021-07-19 02:40:23,391:utils:INFO: [71,   600] loss: 0.206, avg_margin: 0.973. 
+2021-07-19 02:40:32,779:utils:INFO: [71,   800] loss: 0.204, avg_margin: 0.972. 
+2021-07-19 02:40:42,137:utils:INFO: [71,  1000] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:40:51,552:utils:INFO: [71,  1200] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:40:54,962:utils:INFO: Validate epoch 70
+2021-07-19 02:41:02,465:utils:INFO: Train epoch 71
+2021-07-19 02:41:12,160:utils:INFO: [72,   200] loss: 0.206, avg_margin: 0.968. 
+2021-07-19 02:41:21,548:utils:INFO: [72,   400] loss: 0.208, avg_margin: 0.966. 
+2021-07-19 02:41:30,956:utils:INFO: [72,   600] loss: 0.204, avg_margin: 0.968. 
+2021-07-19 02:41:40,387:utils:INFO: [72,   800] loss: 0.206, avg_margin: 0.968. 
+2021-07-19 02:41:49,813:utils:INFO: [72,  1000] loss: 0.205, avg_margin: 0.969. 
+2021-07-19 02:41:59,178:utils:INFO: [72,  1200] loss: 0.205, avg_margin: 0.970. 
+2021-07-19 02:42:02,608:utils:INFO: Validate epoch 71
+2021-07-19 02:42:10,178:utils:INFO: Train epoch 72
+2021-07-19 02:42:19,834:utils:INFO: [73,   200] loss: 0.204, avg_margin: 0.977. 
+2021-07-19 02:42:29,162:utils:INFO: [73,   400] loss: 0.207, avg_margin: 0.973. 
+2021-07-19 02:42:38,431:utils:INFO: [73,   600] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:42:47,714:utils:INFO: [73,   800] loss: 0.209, avg_margin: 0.969. 
+2021-07-19 02:42:57,083:utils:INFO: [73,  1000] loss: 0.210, avg_margin: 0.968. 
+2021-07-19 02:43:06,445:utils:INFO: [73,  1200] loss: 0.205, avg_margin: 0.968. 
+2021-07-19 02:43:09,794:utils:INFO: Validate epoch 72
+2021-07-19 02:43:17,283:utils:INFO: Train epoch 73
+2021-07-19 02:43:27,116:utils:INFO: [74,   200] loss: 0.207, avg_margin: 0.969. 
+2021-07-19 02:43:36,653:utils:INFO: [74,   400] loss: 0.211, avg_margin: 0.964. 
+2021-07-19 02:43:46,228:utils:INFO: [74,   600] loss: 0.203, avg_margin: 0.968. 
+2021-07-19 02:43:55,735:utils:INFO: [74,   800] loss: 0.204, avg_margin: 0.970. 
+2021-07-19 02:44:05,279:utils:INFO: [74,  1000] loss: 0.206, avg_margin: 0.970. 
+2021-07-19 02:44:14,768:utils:INFO: [74,  1200] loss: 0.206, avg_margin: 0.970. 
+2021-07-19 02:44:18,212:utils:INFO: Validate epoch 73
+2021-07-19 02:44:25,781:utils:INFO: Train epoch 74
+2021-07-19 02:44:35,464:utils:INFO: [75,   200] loss: 0.205, avg_margin: 0.971. 
+2021-07-19 02:44:44,811:utils:INFO: [75,   400] loss: 0.209, avg_margin: 0.968. 
+2021-07-19 02:44:54,169:utils:INFO: [75,   600] loss: 0.206, avg_margin: 0.967. 
+2021-07-19 02:45:03,562:utils:INFO: [75,   800] loss: 0.206, avg_margin: 0.968. 
+2021-07-19 02:45:12,956:utils:INFO: [75,  1000] loss: 0.205, avg_margin: 0.969. 
+2021-07-19 02:45:22,308:utils:INFO: [75,  1200] loss: 0.204, avg_margin: 0.970. 
+2021-07-19 02:45:25,683:utils:INFO: Validate epoch 74
+2021-07-19 02:45:33,158:utils:INFO: Train epoch 75
+2021-07-19 02:45:42,949:utils:INFO: [76,   200] loss: 0.205, avg_margin: 0.972. 
+2021-07-19 02:45:52,310:utils:INFO: [76,   400] loss: 0.207, avg_margin: 0.971. 
+2021-07-19 02:46:01,671:utils:INFO: [76,   600] loss: 0.205, avg_margin: 0.971. 
+2021-07-19 02:46:11,101:utils:INFO: [76,   800] loss: 0.206, avg_margin: 0.971. 
+2021-07-19 02:46:20,387:utils:INFO: [76,  1000] loss: 0.208, avg_margin: 0.970. 
+2021-07-19 02:46:29,823:utils:INFO: [76,  1200] loss: 0.203, avg_margin: 0.971. 
+2021-07-19 02:46:33,221:utils:INFO: Validate epoch 75
+2021-07-19 02:46:40,768:utils:INFO: Train epoch 76
+2021-07-19 02:46:50,431:utils:INFO: [77,   200] loss: 0.205, avg_margin: 0.974. 
+2021-07-19 02:46:59,808:utils:INFO: [77,   400] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:47:09,098:utils:INFO: [77,   600] loss: 0.203, avg_margin: 0.974. 
+2021-07-19 02:47:18,436:utils:INFO: [77,   800] loss: 0.204, avg_margin: 0.975. 
+2021-07-19 02:47:27,735:utils:INFO: [77,  1000] loss: 0.206, avg_margin: 0.974. 
+2021-07-19 02:47:37,033:utils:INFO: [77,  1200] loss: 0.208, avg_margin: 0.972. 
+2021-07-19 02:47:40,407:utils:INFO: Validate epoch 76
+2021-07-19 02:47:47,926:utils:INFO: Train epoch 77
+2021-07-19 02:47:57,686:utils:INFO: [78,   200] loss: 0.204, avg_margin: 0.974. 
+2021-07-19 02:48:07,056:utils:INFO: [78,   400] loss: 0.201, avg_margin: 0.978. 
+2021-07-19 02:48:16,378:utils:INFO: [78,   600] loss: 0.208, avg_margin: 0.975. 
+2021-07-19 02:48:25,775:utils:INFO: [78,   800] loss: 0.204, avg_margin: 0.975. 
+2021-07-19 02:48:35,076:utils:INFO: [78,  1000] loss: 0.208, avg_margin: 0.973. 
+2021-07-19 02:48:44,468:utils:INFO: [78,  1200] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:48:47,878:utils:INFO: Validate epoch 77
+2021-07-19 02:48:55,344:utils:INFO: Train epoch 78
+2021-07-19 02:49:05,058:utils:INFO: [79,   200] loss: 0.204, avg_margin: 0.973. 
+2021-07-19 02:49:14,517:utils:INFO: [79,   400] loss: 0.207, avg_margin: 0.971. 
+2021-07-19 02:49:23,944:utils:INFO: [79,   600] loss: 0.206, avg_margin: 0.971. 
+2021-07-19 02:49:33,407:utils:INFO: [79,   800] loss: 0.207, avg_margin: 0.971. 
+2021-07-19 02:49:42,929:utils:INFO: [79,  1000] loss: 0.203, avg_margin: 0.972. 
+2021-07-19 02:49:52,460:utils:INFO: [79,  1200] loss: 0.207, avg_margin: 0.972. 
+2021-07-19 02:49:55,897:utils:INFO: Validate epoch 78
+2021-07-19 02:50:03,422:utils:INFO: Train epoch 79
+2021-07-19 02:50:13,155:utils:INFO: [80,   200] loss: 0.201, avg_margin: 0.979. 
+2021-07-19 02:50:22,515:utils:INFO: [80,   400] loss: 0.207, avg_margin: 0.976. 
+2021-07-19 02:50:31,908:utils:INFO: [80,   600] loss: 0.207, avg_margin: 0.974. 
+2021-07-19 02:50:41,276:utils:INFO: [80,   800] loss: 0.209, avg_margin: 0.971. 
+2021-07-19 02:50:50,651:utils:INFO: [80,  1000] loss: 0.209, avg_margin: 0.969. 
+2021-07-19 02:50:59,995:utils:INFO: [80,  1200] loss: 0.205, avg_margin: 0.970. 
+2021-07-19 02:51:03,359:utils:INFO: Validate epoch 79
+2021-07-19 02:51:10,895:utils:INFO: Train epoch 80
+2021-07-19 02:51:20,557:utils:INFO: [81,   200] loss: 0.202, avg_margin: 0.980. 
+2021-07-19 02:51:29,839:utils:INFO: [81,   400] loss: 0.209, avg_margin: 0.972. 
+2021-07-19 02:51:39,196:utils:INFO: [81,   600] loss: 0.203, avg_margin: 0.973. 
+2021-07-19 02:51:48,619:utils:INFO: [81,   800] loss: 0.207, avg_margin: 0.972. 
+2021-07-19 02:51:57,991:utils:INFO: [81,  1000] loss: 0.207, avg_margin: 0.971. 
+2021-07-19 02:52:07,366:utils:INFO: [81,  1200] loss: 0.204, avg_margin: 0.971. 
+2021-07-19 02:52:10,721:utils:INFO: Validate epoch 80
+2021-07-19 02:52:18,360:utils:INFO: Train epoch 81
+2021-07-19 02:52:28,082:utils:INFO: [82,   200] loss: 0.205, avg_margin: 0.969. 
+2021-07-19 02:52:37,454:utils:INFO: [82,   400] loss: 0.207, avg_margin: 0.969. 
+2021-07-19 02:52:46,765:utils:INFO: [82,   600] loss: 0.201, avg_margin: 0.973. 
+2021-07-19 02:52:56,123:utils:INFO: [82,   800] loss: 0.203, avg_margin: 0.974. 
+2021-07-19 02:53:05,428:utils:INFO: [82,  1000] loss: 0.208, avg_margin: 0.972. 
+2021-07-19 02:53:14,748:utils:INFO: [82,  1200] loss: 0.208, avg_margin: 0.971. 
+2021-07-19 02:53:18,161:utils:INFO: Validate epoch 81
+2021-07-19 02:53:25,637:utils:INFO: Train epoch 82
+2021-07-19 02:53:35,438:utils:INFO: [83,   200] loss: 0.205, avg_margin: 0.970. 
+2021-07-19 02:53:44,978:utils:INFO: [83,   400] loss: 0.201, avg_margin: 0.976. 
+2021-07-19 02:53:54,542:utils:INFO: [83,   600] loss: 0.203, avg_margin: 0.976. 
+2021-07-19 02:54:04,086:utils:INFO: [83,   800] loss: 0.203, avg_margin: 0.976. 
+2021-07-19 02:54:13,599:utils:INFO: [83,  1000] loss: 0.207, avg_margin: 0.975. 
+2021-07-19 02:54:23,212:utils:INFO: [83,  1200] loss: 0.206, avg_margin: 0.974. 
+2021-07-19 02:54:26,612:utils:INFO: Validate epoch 82
+2021-07-19 02:54:34,108:utils:INFO: Train epoch 83
+2021-07-19 02:54:43,738:utils:INFO: [84,   200] loss: 0.207, avg_margin: 0.967. 
+2021-07-19 02:54:53,091:utils:INFO: [84,   400] loss: 0.200, avg_margin: 0.973. 
+2021-07-19 02:55:02,553:utils:INFO: [84,   600] loss: 0.208, avg_margin: 0.972. 
+2021-07-19 02:55:12,015:utils:INFO: [84,   800] loss: 0.206, avg_margin: 0.971. 
+2021-07-19 02:55:21,366:utils:INFO: [84,  1000] loss: 0.204, avg_margin: 0.972. 
+2021-07-19 02:55:30,608:utils:INFO: [84,  1200] loss: 0.205, avg_margin: 0.972. 
+2021-07-19 02:55:33,976:utils:INFO: Validate epoch 83
+2021-07-19 02:55:41,510:utils:INFO: Train epoch 84
+2021-07-19 02:55:51,286:utils:INFO: [85,   200] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:56:00,799:utils:INFO: [85,   400] loss: 0.205, avg_margin: 0.973. 
+2021-07-19 02:56:10,302:utils:INFO: [85,   600] loss: 0.207, avg_margin: 0.971. 
+2021-07-19 02:56:19,745:utils:INFO: [85,   800] loss: 0.206, avg_margin: 0.970. 
+2021-07-19 02:56:29,243:utils:INFO: [85,  1000] loss: 0.204, avg_margin: 0.972. 
+2021-07-19 02:56:38,730:utils:INFO: [85,  1200] loss: 0.205, avg_margin: 0.972. 
+2021-07-19 02:56:42,136:utils:INFO: Validate epoch 84
+2021-07-19 02:56:49,754:utils:INFO: Train epoch 85
+2021-07-19 02:56:59,365:utils:INFO: [86,   200] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 02:57:08,634:utils:INFO: [86,   400] loss: 0.206, avg_margin: 0.971. 
+2021-07-19 02:57:17,938:utils:INFO: [86,   600] loss: 0.201, avg_margin: 0.975. 
+2021-07-19 02:57:27,269:utils:INFO: [86,   800] loss: 0.202, avg_margin: 0.976. 
+2021-07-19 02:57:36,559:utils:INFO: [86,  1000] loss: 0.210, avg_margin: 0.974. 
+2021-07-19 02:57:45,953:utils:INFO: [86,  1200] loss: 0.208, avg_margin: 0.972. 
+2021-07-19 02:57:49,434:utils:INFO: Validate epoch 85
+2021-07-19 02:57:57,169:utils:INFO: Train epoch 86
+2021-07-19 02:58:07,019:utils:INFO: [87,   200] loss: 0.206, avg_margin: 0.969. 
+2021-07-19 02:58:16,516:utils:INFO: [87,   400] loss: 0.205, avg_margin: 0.971. 
+2021-07-19 02:58:26,074:utils:INFO: [87,   600] loss: 0.205, avg_margin: 0.973. 
+2021-07-19 02:58:35,582:utils:INFO: [87,   800] loss: 0.209, avg_margin: 0.970. 
+2021-07-19 02:58:45,061:utils:INFO: [87,  1000] loss: 0.202, avg_margin: 0.972. 
+2021-07-19 02:58:54,499:utils:INFO: [87,  1200] loss: 0.205, avg_margin: 0.972. 
+2021-07-19 02:58:57,917:utils:INFO: Validate epoch 86
+2021-07-19 02:59:05,586:utils:INFO: Train epoch 87
+2021-07-19 02:59:15,287:utils:INFO: [88,   200] loss: 0.202, avg_margin: 0.980. 
+2021-07-19 02:59:24,666:utils:INFO: [88,   400] loss: 0.208, avg_margin: 0.974. 
+2021-07-19 02:59:34,067:utils:INFO: [88,   600] loss: 0.207, avg_margin: 0.972. 
+2021-07-19 02:59:43,389:utils:INFO: [88,   800] loss: 0.204, avg_margin: 0.973. 
+2021-07-19 02:59:52,696:utils:INFO: [88,  1000] loss: 0.205, avg_margin: 0.972. 
+2021-07-19 03:00:02,057:utils:INFO: [88,  1200] loss: 0.201, avg_margin: 0.974. 
+2021-07-19 03:00:05,446:utils:INFO: Validate epoch 87
+2021-07-19 03:00:12,922:utils:INFO: Train epoch 88
+2021-07-19 03:00:22,673:utils:INFO: [89,   200] loss: 0.206, avg_margin: 0.969. 
+2021-07-19 03:00:32,014:utils:INFO: [89,   400] loss: 0.203, avg_margin: 0.973. 
+2021-07-19 03:00:41,288:utils:INFO: [89,   600] loss: 0.204, avg_margin: 0.974. 
+2021-07-19 03:00:50,548:utils:INFO: [89,   800] loss: 0.202, avg_margin: 0.975. 
+2021-07-19 03:00:59,806:utils:INFO: [89,  1000] loss: 0.204, avg_margin: 0.976. 
+2021-07-19 03:01:09,133:utils:INFO: [89,  1200] loss: 0.206, avg_margin: 0.975. 
+2021-07-19 03:01:12,521:utils:INFO: Validate epoch 88
+2021-07-19 03:01:19,954:utils:INFO: Train epoch 89
+2021-07-19 03:01:29,601:utils:INFO: [90,   200] loss: 0.204, avg_margin: 0.974. 
+2021-07-19 03:01:38,811:utils:INFO: [90,   400] loss: 0.206, avg_margin: 0.973. 
+2021-07-19 03:01:48,015:utils:INFO: [90,   600] loss: 0.205, avg_margin: 0.973. 
+2021-07-19 03:01:57,301:utils:INFO: [90,   800] loss: 0.204, avg_margin: 0.974. 
+2021-07-19 03:02:06,580:utils:INFO: [90,  1000] loss: 0.203, avg_margin: 0.974. 
+2021-07-19 03:02:15,945:utils:INFO: [90,  1200] loss: 0.207, avg_margin: 0.974. 
+2021-07-19 03:02:19,287:utils:INFO: Validate epoch 89
+2021-07-19 03:02:26,809:utils:INFO: Train epoch 90
+2021-07-19 03:02:36,510:utils:INFO: [91,   200] loss: 0.203, avg_margin: 0.978. 
+2021-07-19 03:02:45,869:utils:INFO: [91,   400] loss: 0.206, avg_margin: 0.974. 
+2021-07-19 03:02:55,308:utils:INFO: [91,   600] loss: 0.206, avg_margin: 0.973. 
+2021-07-19 03:03:04,667:utils:INFO: [91,   800] loss: 0.201, avg_margin: 0.975. 
+2021-07-19 03:03:14,072:utils:INFO: [91,  1000] loss: 0.204, avg_margin: 0.976. 
+2021-07-19 03:03:23,478:utils:INFO: [91,  1200] loss: 0.206, avg_margin: 0.975. 
+2021-07-19 03:03:26,900:utils:INFO: Validate epoch 90
+2021-07-19 03:03:34,443:utils:INFO: Train epoch 91
+2021-07-19 03:03:44,090:utils:INFO: [92,   200] loss: 0.204, avg_margin: 0.972. 
+2021-07-19 03:03:53,446:utils:INFO: [92,   400] loss: 0.205, avg_margin: 0.974. 
+2021-07-19 03:04:02,929:utils:INFO: [92,   600] loss: 0.205, avg_margin: 0.973. 
+2021-07-19 03:04:12,373:utils:INFO: [92,   800] loss: 0.206, avg_margin: 0.973. 
+2021-07-19 03:04:21,769:utils:INFO: [92,  1000] loss: 0.209, avg_margin: 0.971. 
+2021-07-19 03:04:31,124:utils:INFO: [92,  1200] loss: 0.202, avg_margin: 0.972. 
+2021-07-19 03:04:34,524:utils:INFO: Validate epoch 91
+2021-07-19 03:04:42,185:utils:INFO: Train epoch 92
+2021-07-19 03:04:52,019:utils:INFO: [93,   200] loss: 0.206, avg_margin: 0.974. 
+2021-07-19 03:05:01,501:utils:INFO: [93,   400] loss: 0.203, avg_margin: 0.976. 
+2021-07-19 03:05:10,939:utils:INFO: [93,   600] loss: 0.208, avg_margin: 0.973. 
+2021-07-19 03:05:20,474:utils:INFO: [93,   800] loss: 0.205, avg_margin: 0.973. 
+2021-07-19 03:05:29,950:utils:INFO: [93,  1000] loss: 0.205, avg_margin: 0.973. 
+2021-07-19 03:05:39,481:utils:INFO: [93,  1200] loss: 0.202, avg_margin: 0.974. 
+2021-07-19 03:05:42,937:utils:INFO: Validate epoch 92
+2021-07-19 03:05:50,424:utils:INFO: Train epoch 93
+2021-07-19 03:06:00,172:utils:INFO: [94,   200] loss: 0.203, avg_margin: 0.979. 
+2021-07-19 03:06:09,591:utils:INFO: [94,   400] loss: 0.208, avg_margin: 0.974. 
+2021-07-19 03:06:18,958:utils:INFO: [94,   600] loss: 0.206, avg_margin: 0.971. 
+2021-07-19 03:06:28,308:utils:INFO: [94,   800] loss: 0.201, avg_margin: 0.974. 
+2021-07-19 03:06:37,684:utils:INFO: [94,  1000] loss: 0.209, avg_margin: 0.973. 
+2021-07-19 03:06:46,998:utils:INFO: [94,  1200] loss: 0.206, avg_margin: 0.973. 
+2021-07-19 03:06:50,369:utils:INFO: Validate epoch 93
+2021-07-19 03:06:57,850:utils:INFO: Train epoch 94
+2021-07-19 03:07:07,368:utils:INFO: [95,   200] loss: 0.207, avg_margin: 0.968. 
+2021-07-19 03:07:16,575:utils:INFO: [95,   400] loss: 0.203, avg_margin: 0.973. 
+2021-07-19 03:07:25,863:utils:INFO: [95,   600] loss: 0.203, avg_margin: 0.974. 
+2021-07-19 03:07:35,160:utils:INFO: [95,   800] loss: 0.203, avg_margin: 0.976. 
+2021-07-19 03:07:44,420:utils:INFO: [95,  1000] loss: 0.207, avg_margin: 0.975. 
+2021-07-19 03:07:53,707:utils:INFO: [95,  1200] loss: 0.204, avg_margin: 0.975. 
+2021-07-19 03:07:57,081:utils:INFO: Validate epoch 94
+2021-07-19 03:08:04,576:utils:INFO: Train epoch 95
+2021-07-19 03:08:14,216:utils:INFO: [96,   200] loss: 0.206, avg_margin: 0.968. 
+2021-07-19 03:08:23,582:utils:INFO: [96,   400] loss: 0.209, avg_margin: 0.967. 
+2021-07-19 03:08:32,926:utils:INFO: [96,   600] loss: 0.205, avg_margin: 0.968. 
+2021-07-19 03:08:42,281:utils:INFO: [96,   800] loss: 0.203, avg_margin: 0.970. 
+2021-07-19 03:08:51,614:utils:INFO: [96,  1000] loss: 0.206, avg_margin: 0.970. 
+2021-07-19 03:09:00,814:utils:INFO: [96,  1200] loss: 0.207, avg_margin: 0.970. 
+2021-07-19 03:09:04,171:utils:INFO: Validate epoch 95
+2021-07-19 03:09:11,742:utils:INFO: Train epoch 96
+2021-07-19 03:09:21,461:utils:INFO: [97,   200] loss: 0.204, avg_margin: 0.976. 
+2021-07-19 03:09:30,849:utils:INFO: [97,   400] loss: 0.208, avg_margin: 0.970. 
+2021-07-19 03:09:40,251:utils:INFO: [97,   600] loss: 0.206, avg_margin: 0.970. 
+2021-07-19 03:09:49,556:utils:INFO: [97,   800] loss: 0.205, avg_margin: 0.970. 
+2021-07-19 03:09:58,900:utils:INFO: [97,  1000] loss: 0.204, avg_margin: 0.971. 
+2021-07-19 03:10:08,380:utils:INFO: [97,  1200] loss: 0.204, avg_margin: 0.972. 
+2021-07-19 03:10:11,770:utils:INFO: Validate epoch 96
+2021-07-19 03:10:19,262:utils:INFO: Train epoch 97
+2021-07-19 03:10:28,924:utils:INFO: [98,   200] loss: 0.204, avg_margin: 0.974. 
+2021-07-19 03:10:38,321:utils:INFO: [98,   400] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 03:10:47,704:utils:INFO: [98,   600] loss: 0.205, avg_margin: 0.973. 
+2021-07-19 03:10:57,057:utils:INFO: [98,   800] loss: 0.209, avg_margin: 0.971. 
+2021-07-19 03:11:06,488:utils:INFO: [98,  1000] loss: 0.205, avg_margin: 0.972. 
+2021-07-19 03:11:15,823:utils:INFO: [98,  1200] loss: 0.206, avg_margin: 0.972. 
+2021-07-19 03:11:19,186:utils:INFO: Validate epoch 97
+2021-07-19 03:11:26,671:utils:INFO: Train epoch 98
+2021-07-19 03:11:36,322:utils:INFO: [99,   200] loss: 0.203, avg_margin: 0.977. 
+2021-07-19 03:11:45,585:utils:INFO: [99,   400] loss: 0.204, avg_margin: 0.976. 
+2021-07-19 03:11:54,919:utils:INFO: [99,   600] loss: 0.204, avg_margin: 0.975. 
+2021-07-19 03:12:04,225:utils:INFO: [99,   800] loss: 0.202, avg_margin: 0.976. 
+2021-07-19 03:12:13,511:utils:INFO: [99,  1000] loss: 0.205, avg_margin: 0.977. 
+2021-07-19 03:12:22,834:utils:INFO: [99,  1200] loss: 0.209, avg_margin: 0.975. 
+2021-07-19 03:12:26,212:utils:INFO: Validate epoch 98
+2021-07-19 03:12:33,691:utils:INFO: Train epoch 99
+2021-07-19 03:12:43,314:utils:INFO: [100,   200] loss: 0.204, avg_margin: 0.974. 
+2021-07-19 03:12:52,583:utils:INFO: [100,   400] loss: 0.203, avg_margin: 0.975. 
+2021-07-19 03:13:01,997:utils:INFO: [100,   600] loss: 0.209, avg_margin: 0.972. 
+2021-07-19 03:13:11,276:utils:INFO: [100,   800] loss: 0.202, avg_margin: 0.974. 
+2021-07-19 03:13:20,549:utils:INFO: [100,  1000] loss: 0.205, avg_margin: 0.974. 
+2021-07-19 03:13:29,892:utils:INFO: [100,  1200] loss: 0.201, avg_margin: 0.975. 
+2021-07-19 03:13:33,243:utils:INFO: Validate epoch 99

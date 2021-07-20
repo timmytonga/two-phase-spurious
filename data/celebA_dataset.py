@@ -8,6 +8,7 @@ from models import model_attributes
 from torch.utils.data import Dataset, Subset
 from data.confounder_dataset import ConfounderDataset
 
+
 class CelebADataset(ConfounderDataset):
     """
     CelebA dataset (already cropped and centered).

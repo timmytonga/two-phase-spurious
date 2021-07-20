@@ -1,5 +1,5 @@
 from data.data import log_data
-from utils import set_seed, Logger, log_args
+from utils import set_seed, LoggerAdv as Logger, log_args
 import argparse
 import os
 import torch
@@ -8,16 +8,18 @@ from data.celebA_dataset import CelebADataset
 from data.dro_dataset import DRODataset
 from train import train
 
+avail_losses = ['LDAM', 'CE']
+
 
 def main():
     parser = argparse.ArgumentParser()
     # args: log_dir, seed, lr, batchsize, width, n_epochs, weight_decay
-    parser.add_argument('--log_dir', default='./logs')
-    parser.add_argument('--seed', type=int, default=None)
+    parser.add_argument('--log_dir', default='./logs', help="Directory for log files and checkpoints")
+    parser.add_argument('--seed', type=int, default=None, help="Set deterministic seed for everything")
     parser.add_argument('--n_epochs', type=int, default=4)
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--lr', type=float, default=0.001)
-    parser.add_argument('--weight_decay', type=float, default=0.00001)
+    parser.add_argument('--weight_decay', type=float, default=0.00001, help="L2 Regularization")
     parser.add_argument('--resnet_width', type=int, default=None)
     parser.add_argument('--reweight_groups', action='store_true', default=False)
     parser.add_argument('--resume', action='store_true', default=False)
@@ -25,6 +27,9 @@ def main():
     parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('--save_every', type=int, default=None)
     parser.add_argument('--robust', action='store_true', default=False)
+    parser.add_argument('--loss_type', type=str, choices=avail_losses, default='CE')
+    parser.add_argument('--classifying_groups', action='store_true', default=False)
+    parser.add_argument('--use_cpu', action='store_true', default=False)
     
     args = parser.parse_args()
     # setup logging
@@ -42,7 +47,7 @@ def main():
         set_seed(args.seed)
 
     # loading data
-    device = f'cuda:{args.gpu}' if torch.cuda.is_available() else 'cpu'
+    device = f'cuda:{args.gpu}' if (torch.cuda.is_available() and not args.use_cpu) else 'cpu'
     logger.write('Using {} device'.format(device))
     root_dir = '/home/thiennguyen/research/datasets/celebA/'  # dir that contains data
     target_name = 'Blond_Hair'  # we are classifying whether the input image is blond or not
@@ -82,13 +87,14 @@ def main():
     test_loader = test_data.get_loader(train=False, reweight_groups=None, **loader_kwargs)
     data = {'train_loader': train_loader, 'val_loader': val_loader, 'test_loader': test_loader,
             'train_data': train_data, 'val_data': val_data, 'test_data': test_data}
-    n_classes = 4  # since we are classifying the groups here
+    # if we are classifying the groups then our network output the groups
+    n_output_heads = train_data.n_groups if args.classifying_groups else train_data.n_classes
     log_data(data, logger)
     
     logger.flush()
     # initialize model, loss, and optimizer
 
-    model = resnet10vw(args.resnet_width, num_classes=n_classes)
+    model = resnet10vw(args.resnet_width, num_classes=n_output_heads)
     if args.resume:
         load_path = os.path.join(args.log_dir, f'model_{args.resume_from}.pth')
         assert os.path.exists(load_path), f"Model path {load_path} specified does not exist."
