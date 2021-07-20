@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, DataLoader, Subset
 from torch.utils.data.sampler import WeightedRandomSampler
 
 
@@ -31,6 +31,21 @@ class DRODataset(Dataset):
         else:
             return self.process_item(self.dataset[idx])
 
+    def get_x(self, idx):
+        if type(self.dataset) == Subset:
+            return self.dataset.dataset.get_x(idx)
+        return self.dataset.get_x(idx)
+
+    def get_y(self, idx):
+        if type(self.dataset) == Subset:
+            return self.dataset.dataset.get_y(idx)
+        return self.dataset.get_y(idx)
+
+    def get_g(self, idx):
+        if type(self.dataset) == Subset:
+            return self.dataset.dataset.get_g(idx)
+        return self.dataset.get_g(idx)
+
     def __len__(self):
         return len(self.dataset)
 
@@ -40,8 +55,11 @@ class DRODataset(Dataset):
     def class_counts(self):
         return self._y_counts
 
+    def get_y_array(self):
+        return self._y_array
+
     def input_size(self):
-        for x,y,g in self:
+        for x, y, g, _ in self:
             return x.size()
 
     def get_loader(self, train, reweight_groups, **kwargs):
