@@ -89,6 +89,7 @@ def main():
 
     # now we obtain the pseudolabels if requested
     if args.use_pseudogrouplabels:
+        logger.write("Obtaining pseudo group labels")
         pgl_dataset = obtain_pseudo_group_label_data(args, model, device, data['train_data'], data['train_loader'])
         pgl_train_loader = pgl_dataset.get_loader(train=True, reweight_groups=False, batch_size=args.batch_size)
         data['train_data'] = pgl_dataset
@@ -96,6 +97,7 @@ def main():
         log_pgl_data(pgl_dataset, data['train_data'], logger)
 
     process_model_layers(args, model)  # this freezes the layer if the appropriate argument is set.
+    logger.write("Training...")
     train(args, model, device, mode, data, logger, run_test=True)  # train model, save it, and log stats
     logger.write(f"Finished training!")  # mainly for timestamp in the log file
 
