@@ -5,6 +5,7 @@ import csv
 from pprint import pprint
 import numpy as np
 from losses import LDAMLoss, LossComputer
+from utils import make_group_acc_columns_for_csv_writer
 
 
 def write_to_writer(writer, content):
@@ -98,6 +99,7 @@ def train(args, model, device, mode, data, logger, run_test=False):
     if args.loss_type == 'CE':
         criterion = torch.nn.CrossEntropyLoss()
     elif args.loss_type == 'LDAM':
+        assert args.classifying_groups, "LDAM must be used with classifying groups!!"
         cls_num_list = data['train_data'].group_counts().numpy()
         criterion = LDAMLoss(cls_num_list, device=device)  # I am just using the default setting here
     else:
@@ -119,15 +121,8 @@ def train(args, model, device, mode, data, logger, run_test=False):
     val_path = open(os.path.join(args.log_dir, 'val.csv'), mode)
     test_path = open(os.path.join(args.log_dir, 'test.csv'), mode)
 
-    n_groups = data['train_data'].n_groups
-    total_acc_per_group = [f'total_acc:g{i}' for i in range(n_groups)]
-    group_accs = [f'group{i}_acc' for i in range(n_groups)]
-    group_margins = [f'group{i}_margin' for i in range(n_groups)]
-    train_columns = ['epoch', 'total_acc',  'split_acc', 'loss',
-                     'avg_margin'] + total_acc_per_group + group_accs + group_margins
-
-    valtest_columns = ['epoch', 'total_acc',  'split_acc',
-                       'avg_margin'] + total_acc_per_group + group_accs + group_margins
+    train_columns = make_group_acc_columns_for_csv_writer(data['train_data'].n_groups)
+    valtest_columns = make_group_acc_columns_for_csv_writer(data['val_data'].n_groups)
 
     train_writer = csv.DictWriter(train_path, fieldnames=train_columns)
     val_writer = csv.DictWriter(val_path, fieldnames=valtest_columns)

@@ -266,3 +266,18 @@ def add_args(parser):
     parser.add_argument('--save_best', action='store_true', default=False)
     parser.add_argument('--save_last', action='store_true', default=False)
 
+
+def make_group_acc_columns_for_csv_writer(n_groups, train=True):
+    """
+    Make appropriate columns for csv writer to keep track of stats.
+    train is boolean indicating whether it's for a train_csv_writer or not -- has an additional loss column
+    """
+    total_acc_per_group = [f'total_acc:g{i}' for i in range(n_groups)]
+    group_accs = [f'group{i}_acc' for i in range(n_groups)]
+    group_margins = [f'group{i}_margin' for i in range(n_groups)]
+    if train:
+        return ['epoch', 'total_acc',  'split_acc', 'loss',
+                'avg_margin'] + total_acc_per_group + group_accs + group_margins
+    else:
+        return ['epoch', 'total_acc',  'split_acc',
+                'avg_margin'] + total_acc_per_group + group_accs + group_margins

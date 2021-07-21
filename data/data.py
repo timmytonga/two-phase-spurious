@@ -27,6 +27,7 @@ for dataset in dataset_attributes:
 
 shift_types = ['confounder', 'label_shift_step']
 
+
 def prepare_data(args, train, return_full_dataset=False):
     # Set root_dir to defaults if necessary
     if args.root_dir is None:
@@ -36,6 +37,7 @@ def prepare_data(args, train, return_full_dataset=False):
     elif args.shift_type.startswith('label_shift'):
         assert not return_full_dataset
         return prepare_label_shift_data(args, train)
+
 
 def log_data(data, logger):
     logger.write('Training Data...\n')
@@ -48,3 +50,44 @@ def log_data(data, logger):
         logger.write('Test Data...\n')
         for group_idx in range(data['test_data'].n_groups):
             logger.write(f'    {data["test_data"].group_str(group_idx)}: n = {data["test_data"].group_counts()[group_idx]:.0f}\n')
+
+
+def setup_data(args, rootdir,
+               data_constructor,  # dir that contains data
+               target_name,  # we are classifying whether the input image is blond or not
+               confounder_names,  # we aim to avoid learning spurious features... here it's the gender
+               model_type,  # for meta info
+               augment_data=False, fraction=1.0, splits=('train', 'val', 'test')):
+    """
+    Get the dataset and loader -- my custom version?
+    """
+    full_dataset = data_constructor(root_dir=rootdir,
+                                    target_name=target_name,
+                                    confounder_names=confounder_names,
+                                    model_type=model_type,
+                                    augment_data=augment_data)  # augment data adds random resized crop and random flip.
+
+    subsets = full_dataset.get_splits(
+        # basically return the Subsets object with the appropriate indices for train/val/test
+        splits,  # also implements subsampling --> just remove random indices of the appropriate groups in train
+        train_frac=fraction,  # fraction means how much of the train data to use --> randomly remove if less than 1
+        subsample_to_minority=(args.sampling_method == 'subsample'))
+
+    dro_subsets = [
+        DRODataset(
+            subsets[split],  # process each subset separately --> applying the transform parameter.
+            process_item_fn=None,
+            n_groups=full_dataset.n_groups,
+            n_classes=full_dataset.n_classes,
+            group_str_fn=full_dataset.group_str)
+        for split in splits]
+
+    train_data, val_data, test_data = dro_subsets
+    train_loader = train_data.get_loader(train=True, reweight_groups=(args.sampling_method == 'reweight'),
+                                         batch_size=args.batch_size)
+    val_loader = val_data.get_loader(train=False, reweight_groups=None, batch_size=args.batch_size)
+    test_loader = test_data.get_loader(train=False, reweight_groups=None, batch_size=args.batch_size)
+    data = {'train_loader': train_loader, 'val_loader': val_loader, 'test_loader': test_loader,
+            'train_data': train_data, 'val_data': val_data, 'test_data': test_data}
+    return data
+

@@ -11,14 +11,14 @@ class PseudoGroupLabelsDataset(Dataset):
             dataset: a dataset that implements __getitem__
     """
 
-    def __init__(self, dataset, idxs_to_subgroup_labels, n_groups, process_item_fn=None):
+    def __init__(self, dataset, idxs_to_subgroup_labels, n_pseudogroups, process_item_fn=None):
         self.dataset = dataset
         self.idxs_to_subgroup_labels = idxs_to_subgroup_labels
         # pseudo groups count below
-        self.n_groups = n_groups  # note that this is different than self.dataset.n_groups which is the real group count
+        self.n_groups = n_pseudogroups  # note that this is different than self.dataset.n_groups (real # of groups)
         self.n_classes = self.dataset.n_classes
-        self.process_item = process_item_fn
-        self.group_str = self.dataset.group_str
+        self.process_item = process_item_fn  # this might not be right
+        self.group_str = self.dataset.group_str  # this is wrong!!
 
         self._group_array = torch.tensor([v for _, v in idxs_to_subgroup_labels.items()])
         self._group_counts = (torch.arange(self.n_groups).unsqueeze(1) == self._group_array).sum(1).float()
