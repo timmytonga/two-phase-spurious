@@ -11,7 +11,7 @@ import argparse
 from utils import set_seed, LoggerAdv as Logger, log_args
 import torch
 from data.celebA_dataset import CelebADataset
-from data.dro_dataset import DRODataset
+
 from data.data import log_data, setup_data
 from variable_width_resnet import resnet10vw
 from train import train
@@ -51,10 +51,14 @@ def main():
                         help="Number of cluster per group -- note we will have n_clusters*n_labels(*2)")
     # parse and check args
     args = parser.parse_args()
-    check_args(args)
     # setup logging
+    if args.log_dir is None:
+        dro = f'dro' if args.robust else 'NOTDRO'
+        pgl = f'pgl_{args.cluster_model}{args.n_clusters}_{dro}' if args.use_pseudogrouplabels else ''
+        args.log_dir = f"logs/{pgl}/w{args.resnet_width}s{args.seed}wd{args.weight_decay}"
     if not os.path.exists(args.log_dir):  # todo: auto log dir containing relevant info
         os.makedirs(args.log_dir)
+    check_args(args)
     mode = 'w' if args.resume_from == 0 else 'a'
     logger = Logger(os.path.join(args.log_dir, 'log.txt'), mode)
     # Record args into log
@@ -89,7 +93,7 @@ def main():
         pgl_train_loader = pgl_dataset.get_loader(train=True, reweight_groups=False, batch_size=args.batch_size)
         data['train_data'] = pgl_dataset
         data['train_loader'] = pgl_train_loader
-        log_pgl_data(pgl_dataset, logger, data['train_data'].n_groups)
+        log_pgl_data(pgl_dataset, data['train_data'], logger)
 
     process_model_layers(args, model)  # this freezes the layer if the appropriate argument is set.
     train(args, model, device, mode, data, logger, run_test=True)  # train model, save it, and log stats
@@ -97,6 +101,7 @@ def main():
 
 
 def check_args(args):
+    assert args.use_pseudogrouplabels and args.model_path is not None, "must have existing model to obtain pgl"
     assert args.resume_from == 0, "HAVE NOT IMPLEMENTED RESUME_FROM != 0...DO NOT SET!"
     if args.model_path is None:
         print("\tARGS INFO: Model_path is None --> Training from scratch.")
@@ -117,13 +122,14 @@ def process_model_layers(args, model):
         assert len(parameters) == 2  # fc.weight, fc.bias
 
 
-def log_pgl_data(pgl_dataset, logger, real_n_groups):
+def log_pgl_data(pgl_dataset, train_data, logger):
+    real_n_groups = train_data.n_groups
     logger.write("PGL DATA INFO:")
     group_to_pseudogroup = {i: {sg: 0 for sg in range(pgl_dataset.n_groups)} for i in
                             range(real_n_groups)}  # dict of {real_group: {pseudo_group_label: count}}
     pseudogroup_to_group = {sg: {i: 0 for i in range(real_n_groups)} for sg in range(pgl_dataset.n_groups)}
 
-    for idx, sgl in idxs_to_subgroup_labels.items():
+    for idx, sgl in pgl_dataset.idxs_to_subgroup_labels.items():
         group_to_pseudogroup[train_data.get_g(idx)][sgl] += 1
         pseudogroup_to_group[sgl][train_data.get_g(idx)] += 1
     logger.write(f"\tGroups to Pseudogroups count: \n\t{group_to_pseudogroup}")
@@ -140,8 +146,8 @@ def obtain_pseudo_group_label_data(args, model, device, dataset, dataloader):
     from feature_extractor import FeatureExtractor
     from data.pseudogrouplabels_dataset import PseudoGroupLabelsDataset
     from pseudo_group_labelers import PseudoGroupLabeler
-    extractor = FeatureExtractor(model, device, layer_name='fc',
-                                 get_layers_input=True)  # for ResNet10VW we are getting the last layer's input
+    extractor = FeatureExtractor(model, device, layers_name='fc', get_layers_input=True)
+    # for ResNet10VW we are getting the last layer's input
     # the below runs through an epoch of the loader and save the feature in output_sets['activations']
     #   along with other meta data
     output_sets = extractor.extract_features(dataloader, show_progress=True)

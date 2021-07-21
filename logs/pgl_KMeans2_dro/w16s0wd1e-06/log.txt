@@ -1,0 +1,71 @@
+2021-07-21 06:54:00,172:utils:INFO: Resnet width: 16
+
+2021-07-21 06:54:00,172:utils:INFO: Model path: logs/pgl_KMeans2_dro/modelw16s0wd1e-1epoch100.pth
+
+2021-07-21 06:54:00,172:utils:INFO: Lr: 0.001
+
+2021-07-21 06:54:00,173:utils:INFO: Batch size: 128
+
+2021-07-21 06:54:00,173:utils:INFO: Weight decay: 1e-06
+
+2021-07-21 06:54:00,173:utils:INFO: Sampling method: None
+
+2021-07-21 06:54:00,173:utils:INFO: N epochs: 100
+
+2021-07-21 06:54:00,173:utils:INFO: Log dir: logs/pgl_KMeans2_dro/w16s0wd1e-06
+
+2021-07-21 06:54:00,173:utils:INFO: Seed: 0
+
+2021-07-21 06:54:00,173:utils:INFO: Resume from: 0
+
+2021-07-21 06:54:00,173:utils:INFO: Gpu: 0
+
+2021-07-21 06:54:00,173:utils:INFO: Save every: None
+
+2021-07-21 06:54:00,173:utils:INFO: Loss type: CE
+
+2021-07-21 06:54:00,173:utils:INFO: Robust: True
+
+2021-07-21 06:54:00,173:utils:INFO: Train last layer only: False
+
+2021-07-21 06:54:00,173:utils:INFO: Classifying groups: False
+
+2021-07-21 06:54:00,173:utils:INFO: Use pseudogrouplabels: True
+
+2021-07-21 06:54:00,173:utils:INFO: Cluster model: KMeans
+
+2021-07-21 06:54:00,173:utils:INFO: N clusters: 2
+
+2021-07-21 06:54:00,173:utils:INFO: 
+
+2021-07-21 06:54:00,577:utils:INFO: Training Data...
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 0, Male = 0: n = 71629
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 0, Male = 1: n = 66874
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 1, Male = 0: n = 22880
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 1, Male = 1: n = 1387
+
+2021-07-21 06:54:00,578:utils:INFO: Validation Data...
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 0, Male = 0: n = 8535
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 0, Male = 1: n = 8276
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 1, Male = 0: n = 2874
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 1, Male = 1: n = 182
+
+2021-07-21 06:54:00,578:utils:INFO: Test Data...
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 0, Male = 0: n = 9767
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 0, Male = 1: n = 7535
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 1, Male = 0: n = 2480
+
+2021-07-21 06:54:00,578:utils:INFO:     Blond_Hair = 1, Male = 1: n = 180
+
+2021-07-21 06:54:00,578:utils:INFO: Using cpu device

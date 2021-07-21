@@ -63,7 +63,7 @@ class LoggerAdv(object):
 
     def write(self, msg, level="INFO"):
         assert level in ["INFO", "DEBUG", "WARNING", "ERROR", "CRITICAL"]
-        self.console.write(msg)
+        # self.console.write(msg)
         if self.logger is not None:
             if level == "INFO":
                 self.logger.info(msg)
