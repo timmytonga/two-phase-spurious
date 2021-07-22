@@ -89,11 +89,12 @@ def main():
 
     # now we obtain the pseudolabels if requested
     if args.use_pseudogrouplabels:
+        logger.write("Obtaining pseudo group labels... (this might take a while due to extracting features)")
         pgl_dataset = obtain_pseudo_group_label_data(args, model, device, data['train_data'], data['train_loader'])
         pgl_train_loader = pgl_dataset.get_loader(train=True, reweight_groups=False, batch_size=args.batch_size)
+        log_pgl_data(pgl_dataset, data['train_data'], logger)
         data['train_data'] = pgl_dataset
         data['train_loader'] = pgl_train_loader
-        log_pgl_data(pgl_dataset, data['train_data'], logger)
 
     process_model_layers(args, model)  # this freezes the layer if the appropriate argument is set.
     train(args, model, device, mode, data, logger, run_test=True)  # train model, save it, and log stats
@@ -108,7 +109,7 @@ def check_args(args):
     if args.train_last_layer_only:
         print("\tARGS INFO: We are training ONLY the last layer.")
     else:
-        print("\tARGS INFP: We are training the ENTIRE NETWORK")
+        print("\tARGS INFO: We are training the ENTIRE NETWORK")
 
 
 def process_model_layers(args, model):
@@ -154,7 +155,7 @@ def obtain_pseudo_group_label_data(args, model, device, dataset, dataloader):
     cluster_model = "KMeans"  # the constructor below will take care of the clustering
     pseudo_group_labeler = PseudoGroupLabeler(cluster_model, output_sets, dataset.n_classes)
     idxs_to_subgroup_labels, n_pseudogroups = pseudo_group_labeler.get_pseudo_group_labels(
-        n_clusters=args.n_clusters, max_iter=args.max_iters)
+        n_clusters=args.n_clusters, max_iter=300)
     pgl_dataset = PseudoGroupLabelsDataset(dataset, idxs_to_subgroup_labels, n_pseudogroups)
     return pgl_dataset
 

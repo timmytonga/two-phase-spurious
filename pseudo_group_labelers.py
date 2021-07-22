@@ -9,6 +9,8 @@ import numpy as np
 from copy import copy  # copy the labels from the cluster
 from sklearn.cluster import KMeans
 
+avail_cluster_models = {'KMeans': KMeans}
+
 
 class PseudoGroupLabeler:
     """
@@ -22,7 +24,7 @@ class PseudoGroupLabeler:
             'activations' (the features), the corresponding idx, labels, and model's prediction.
         n_classes: the number of classes we are dealing with.
         """
-        self.cluster_model = cluster_model
+        self.cluster_model = avail_cluster_models[cluster_model]
         self.output_sets = output_sets
         self.n_classes = n_classes
 
