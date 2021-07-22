@@ -97,6 +97,7 @@ def main():
         data['train_loader'] = pgl_train_loader
 
     process_model_layers(args, model)  # this freezes the layer if the appropriate argument is set.
+    logger.write("Training...")
     train(args, model, device, mode, data, logger, run_test=True)  # train model, save it, and log stats
     logger.write(f"Finished training!")  # mainly for timestamp in the log file
 
